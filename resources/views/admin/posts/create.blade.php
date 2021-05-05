@@ -6,8 +6,16 @@
         create new post
     </div>
     <div class="panel-body">
-
-        <form action="{{route('post.store')}}" method="post" class="">
+    @if(count($errors)>0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+        <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
 
             {{csrf_field()}}
             <div class="form-group">
@@ -24,7 +32,7 @@
             </div>
             <div class="form-group">
 
-                <label for="featured">Content</label>
+                <label for="content">Content</label>
                 <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
             </div>
             <div class="form-group">
@@ -32,7 +40,6 @@
                     <button class="btn btn-success" type="submit">ok</button>
                 </div>
             </div>
-
 
         </form>
 

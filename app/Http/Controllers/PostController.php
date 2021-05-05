@@ -36,6 +36,12 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',//|unique:posts todo see what happen
+            'featured' => 'required|image',
+            'content' => 'required|max:1000',
+        ]);
         dd($request);
     }
     /**
