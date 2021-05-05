@@ -7,7 +7,7 @@
     </div>
     <div class="panel-body">
 
-        <form action="/post/store" method="post" class="">
+        <form action="{{route('post.store')}}" method="post" class="">
 
             {{csrf_field()}}
             <div class="form-group">
