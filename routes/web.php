@@ -19,10 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+
+
+
+    Route::get('/home', 'HomeController@index')->name('home');
     
     Route::get('/post/create', 'PostController@create')->name('post.create');
     Route::post('/post/store', 'PostController@store')->name('post.store');
