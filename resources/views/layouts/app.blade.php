@@ -75,9 +75,12 @@
         <main class="py-4">
 <div class="container">
     <div class="row">
+
+
+
+    <!-- menu de navigation -->
+    @if(Auth::check())
         <div class="col-lg-4">
-        
-        
         <ul class="liste-group">
             <li class="list-group-item">
           <a href="/home">home</a>
@@ -89,13 +92,18 @@
             </li>
         </ul>
         
-        
         </div>
-        <div class="col-lg-8">
+        @endif
+    <!-- end of  menu de navigation -->
+    <!-- content of page-->
+
+        <div class="col">
         
         @yield('content')
         
         </div>
+    <!-- end of content -->
+
     </div>
 </div>
 
