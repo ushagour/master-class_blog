@@ -90,6 +90,14 @@
           <a href="{{route('post.create')}}">crete new post</a>
             
             </li>
+            <li class="list-group-item">
+          <a href="{{route('category.index')}}">categories</a>
+            
+            </li>
+            <li class="list-group-item">
+          <a href="{{route('category.create')}}">crete new category</a>
+            
+            </li>
         </ul>
         
         </div>
