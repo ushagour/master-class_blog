@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Category;
+use Illuminate\Http\UploodedFile; //classe pour utilser la methode store 
 class PostController extends Controller
 {
     /**
@@ -28,7 +29,7 @@ class PostController extends Controller
 
 
 
-        return view('admin.posts.create');
+        return view('admin.posts.create')->with('categories',Category::all());// had with hiiya li katsiiift liina array dyal les categories m3a had view
     }
 
     /**
@@ -41,12 +42,31 @@ class PostController extends Controller
     {
         //
 
+        //nb: we link th validation role with the name of input
         $validatedData = $request->validate([
             'title' => 'required|max:255',//|unique:posts todo see what happen
             'featured' => 'required|image',
             'content' => 'required|max:1000',
+            'category_id' => 'required',
         ]);
-        dd($request);
+
+
+
+
+        $path="no_ files";
+        if ($request->hasFile('featured')) {
+       
+       $path = $request->file('featured')->store('featured');
+       }
+
+
+
+
+
+
+        // dd($request);
+
+        echo $path;
     }
     /**
      * Display the specified resource.
