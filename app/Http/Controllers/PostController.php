@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Post;
 use Illuminate\Http\UploodedFile; //classe pour utilser la methode store 
 class PostController extends Controller
 {
@@ -25,11 +26,15 @@ class PostController extends Controller
     public function create()
     {
         //
+            $categories = Category::all();
+            if ($categories->count()==0) {
 
 
+            session()->flash('info','you must have categories before crateing new post');
+            }
 
 
-        return view('admin.posts.create')->with('categories',Category::all());// had with hiiya li katsiiift liina array dyal les categories m3a had view
+        return view('admin.posts.create')->with('categories',$categories);// had with hiiya li katsiiift liina array dyal les categories m3a had view
     }
 
     /**
@@ -59,14 +64,17 @@ class PostController extends Controller
        $path = $request->file('featured')->store('featured');
        }
 
+        $newpost = new Post;
+        $newpost->title = $request->title;
+        $newpost->featured = $path;
+        $newpost->content = $request->content;
+        $newpost->category_id = $request->category_id;
 
+        $newpost->save();
 
+session()->flash('msg','profile cretaed succefuly');
+  return redirect()->route('home');
 
-
-
-        // dd($request);
-
-        echo $path;
     }
     /**
      * Display the specified resource.
@@ -78,7 +86,6 @@ class PostController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -113,5 +120,12 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+
+        $post = Post::find($id);
+
+        $post->delete();
+        session()->flash('msg','profile deleded succesfuly !');
+
+        return redirect()->route('home');
     }
 }
