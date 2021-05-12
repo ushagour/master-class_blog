@@ -18,6 +18,8 @@ class PostController extends Controller
     public function index()
     {
         //
+        $posts = Post::all();
+        return view('admin.posts.index')->with('posts',$posts);
     }
 
     /**
@@ -56,8 +58,6 @@ class PostController extends Controller
             'content' => 'required|max:1000',
             'category_id' => 'required',
         ]);
-
-
 
 
         $path="no_ files";

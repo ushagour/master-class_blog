@@ -87,6 +87,10 @@
             
             </li>
             <li class="list-group-item">
+          <a href="{{route('post.index')}}">ALL Posts</a>
+            
+            </li>
+            <li class="list-group-item">
           <a href="{{route('post.create')}}">crete new post</a>
             
             </li>

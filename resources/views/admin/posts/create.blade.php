@@ -1,11 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        create new post
+<div class="card">
+    <div class="card-title">
+    <h2>        create new post
+</h2>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
     @if(count($errors)>0)
     <div class="alert alert-danger">
         <ul>
