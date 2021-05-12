@@ -18,10 +18,13 @@ class CreatePostTable extends Migration
 
             $table->string('title');
             $table->text('content');
+            $table->text('slug');
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->string('featured');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
 use Illuminate\Http\UploodedFile; //classe pour utilser la methode store 
+use Illuminate\Support\Str; //
+
 class PostController extends Controller
 {
     /**
@@ -69,11 +71,12 @@ class PostController extends Controller
         $newpost->featured = $path;
         $newpost->content = $request->content;
         $newpost->category_id = $request->category_id;
+        $newpost->slug = str::slug($request->title); // dad function dyal helper str kadiir slug l text katredo ligne whda b "_"
 
         $newpost->save();
 
-session()->flash('msg','profile cretaed succefuly');
-  return redirect()->route('home');
+     session()->flash('msg','profile cretaed succefuly');
+       return redirect()->back();
 
     }
     /**

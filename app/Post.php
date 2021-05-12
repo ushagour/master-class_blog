@@ -10,7 +10,7 @@ class Post extends Model
     //
     use SoftDeletes;
     
-    protected $fillable=['title','content','category_id','featured']; // pour presiser les chap a modifier leure dune upldate
+    protected $fillable=['title','content','category_id','featured','slug']; // pour presiser les chap a modifier leure dune upldate
     public function category()
     {
 
