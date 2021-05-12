@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<table class="table">
+<div class="card">
+  <div class="card-body">
+  <table class="table">
     <thead>
         <tr>
        category
@@ -17,6 +19,8 @@
         </tr>
      @endforeach
     </tbody>
-</table>
+</table>  </div>
+</div>
+
 
 @stop
