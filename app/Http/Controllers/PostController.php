@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
+use App\Tag;
 use Illuminate\Http\UploodedFile; //classe pour utilser la methode store 
 use Illuminate\Support\Str; //
 use Illuminate\Support\Facades\Session;
@@ -40,7 +41,8 @@ class PostController extends Controller
             }
 
 
-        return view('admin.posts.create')->with('categories',$categories);// had with hiiya li katsiiift liina array dyal les categories m3a had view
+        return view('admin.posts.create')->with('categories',$categories)// had with hiiya li katsiiift liina array dyal les categories m3a had view
+                                         ->with('tags',Tag::all());
     }
 
     /**
@@ -52,7 +54,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
-
+//dd($request->all());// die and demp with all methode 
         //nb: we link th validation role with the name of input
         $validatedData = $request->validate([
             'title' => 'required|max:255',//|unique:posts todo see what happen
@@ -75,8 +77,11 @@ class PostController extends Controller
         $newpost->category_id = $request->category_id;
         $newpost->slug = str::slug($request->title); // dad function dyal helper str kadiir slug l text katredo ligne whda b "_"
 
+
+        
         $newpost->save();
 
+        $newpost->tags()->attach($request->selectedtags);
      Session::flash('message', 'post created succesfuly!'); 
      Session::flash('alert-class', 'alert-success'); 
      

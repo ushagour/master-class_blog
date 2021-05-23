@@ -51,6 +51,22 @@
 
 </select>
 </div>
+<div class="form-group">
+
+
+<label for="tags">select Tags</label>
+
+
+
+@foreach($tags as $tag)
+<div class="checkbox">
+
+
+ <label for="tag"><input type="checkbox"  name="selectedtags[]" value="{{$tag->id}}" id="tag"> {{$tag->tag}}</label>
+</div>
+@endforeach
+
+</div>
 
             <div class="form-group">
 

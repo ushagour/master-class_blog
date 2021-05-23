@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Tag;
+use App\Category;
+use App\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,5 +68,17 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/tag/delete/{id}', 'Tagscontroller@destroy')->name('tag.destroy');
 
     //end region tags
+
+
+
+
+
+});
+
+#test
+// testing our relatinsheep elequent with proprtys meny to meny 
+Route::get('/test', function(){
+ 
+return App\Post::find(7)->tags;  //  bghiina nchpofo les tag associer lwahd post by id dyaloo
 
 });
