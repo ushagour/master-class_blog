@@ -20,9 +20,9 @@
             {{csrf_field()}}
             <div class="form-group">
 
-                <label for="name">Tag </label>
+                <label for="tag">Tag </label>
 
-                <input type="text" class="form-control" name="name" value="{{$tag->tag}}" id="name">
+                <input type="text" class="form-control" name="tag" value="{{$tag->tag}}" id="tag">
             </div>
 
             <div class="form-group">

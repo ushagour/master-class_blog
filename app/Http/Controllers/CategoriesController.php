@@ -103,7 +103,11 @@ class CategoriesController extends Controller
         $category=Category::find($id);
         $category->name=$request->name;
         $category->save();
-        return redirect()->route('category.index');
+        Session::flash('message', 'category updated succesfuly!'); 
+        Session::flash('alert-class', 'alert-success'); 
+        
+          return redirect()->route('category.index');
+   
     }
 
     /**

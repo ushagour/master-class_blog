@@ -96,7 +96,11 @@ class Tagscontroller extends Controller
         $tag=Tag::find($id);
         $tag->tag=$request->tag;
         $tag->save();
-        return redirect()->route('tag.index');
+        Session::flash('message', 'tag updated succesfuly!'); 
+        Session::flash('alert-class', 'alert-success'); 
+        
+          return redirect()->route('tag.index');
+   
     }
 
     /**
