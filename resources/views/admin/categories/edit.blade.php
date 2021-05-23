@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        create new category
+<div class="card card-default">
+    <div class="card-header">
+      modify  category :{{$category->name}}
     </div>
-    <div class="panel-body">
+    <div class="card-body">
     @if(count($errors)>0)
     <div class="alert alert-danger">
         <ul>

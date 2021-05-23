@@ -119,5 +119,9 @@ class CategoriesController extends Controller
         $category=Category::find($id);
 
         $category->delete();
+        Session::flash('message', 'category deleded defunetly!'); 
+        Session::flash('alert-class', 'alert-danger'); 
+        return redirect()->back();
+
     }
 }
