@@ -52,4 +52,19 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/post/kill/{id}', 'PostController@kill')->name('post.kill');// restoring softdelete data 
 
     //end region post
+
+
+
+
+
+    #region tags 
+    Route::get('/tag', 'Tagscontroller@index')->name('tag.index');
+    Route::get('/tag/create', 'Tagscontroller@create')->name('tag.create');
+    Route::post('/tag/store', 'Tagscontroller@store')->name('tag.store');
+    Route::get('/tag/edit/{id}', 'Tagscontroller@edit')->name('tag.edit');
+    Route::post('/tag/update/{id}', 'Tagscontroller@update')->name('tag.update');
+    Route::get('/tag/delete/{id}', 'Tagscontroller@destroy')->name('tag.destroy');
+
+    //end region tags
+
 });
