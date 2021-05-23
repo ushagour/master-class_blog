@@ -17,4 +17,12 @@ class Post extends Model
         // NB: dima fach kankhdmo  b belongsto katkon function singulier hiit (1.1)
         return $this->belongsTo(Category :: class);
     }
+
+
+    public function tags(){
+
+
+
+        return $this->belongsToMany(Tag::class);
+    }
 }
