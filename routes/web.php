@@ -76,9 +76,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 });
 
 #test
-// testing our relatinsheep elequent with proprtys meny to meny 
+// testing our relatinsheep elequent with proprtys 
 Route::get('/test', function(){
  
-return App\Post::find(7)->tags;  //  bghiina nchpofo les tag associer lwahd post by id dyaloo
+return App\User::find(1)->profile;  //  bghiina nchpofo les tag associer lwahd post by id dyaloo
 
 });
