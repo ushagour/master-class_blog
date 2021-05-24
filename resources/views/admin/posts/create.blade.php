@@ -16,6 +16,11 @@
         </ul>
     </div>
 @endif
+
+@if(Session::has('message'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+
+@endif
         <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
 
             {{csrf_field()}}

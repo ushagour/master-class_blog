@@ -7,6 +7,8 @@ use App\Category;
 use App\Post;
 use Illuminate\Http\UploodedFile; //classe pour utilser la methode store 
 use Illuminate\Support\Str; //
+use Illuminate\Support\Facades\Session;
+
 
 class PostController extends Controller
 {
@@ -60,22 +62,27 @@ class PostController extends Controller
         ]);
 
 
-        $path="no_ files";
+        $featured_name="no_ files";
         if ($request->hasFile('featured')) {
-       
-       $path = $request->file('featured')->store('featured');
+       $distination_path = 'public/featured';
+       $featured= $request->file('featured');
+       $featured_name= $featured->getClientOriginalName();
+       $path = $request->file('featured')->storeAs($distination_path,$featured_name);
+
        }
 
         $newpost = new Post;
         $newpost->title = $request->title;
-        $newpost->featured = $path;
+        $newpost->featured = $featured_name;
         $newpost->content = $request->content;
         $newpost->category_id = $request->category_id;
         $newpost->slug = str::slug($request->title); // dad function dyal helper str kadiir slug l text katredo ligne whda b "_"
 
         $newpost->save();
 
-     session()->flash('msg','profile cretaed succefuly');
+     Session::flash('message', 'post created succesfuly!'); 
+     Session::flash('alert-class', 'alert-success'); 
+     
        return redirect()->back();
 
     }

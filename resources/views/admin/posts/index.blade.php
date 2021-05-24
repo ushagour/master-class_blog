@@ -14,7 +14,7 @@
 
     @foreach($posts as $post)
         <tr>
-            <td>     <img src="{{asset('storage/'. $post->featured)}}" width="10" height="10" /> </td>   
+            <td>     <img src="{{asset('/storage/featured/'. $post->featured)}}" width="10" height="10" /> </td>   
             <td> {{$post->title}}</td>   
             <td> <a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-xs btn-info">edit</a>  <a href="{{route('post.delete',['id'=>$post->id])}}" class="btn btn-xs btn-danger">delete</a></td>   
 

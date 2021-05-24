@@ -15,6 +15,14 @@
             </ul>
         </div>
         @endif
+
+
+
+
+        @if(Session::has('message'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+
+@endif
         <form action="{{route('category.store')}}" method="post">
 
             {{csrf_field()}}

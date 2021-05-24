@@ -48,12 +48,16 @@ class CategoriesController extends Controller
         $category->name=$request->name;
         $category->save();
 
-        Session::flash('success','category created succesfully?');
-        //return redirect()->back();
+
+        # session  fiiha message avec class bootstrap pour le style d'allert 
+        Session::flash('message', 'category created succesfuly!'); 
+        Session::flash('alert-class', 'alert-success'); 
+        
+        return redirect()->back();
         
         
         
-        dd($request);
+       // dd($request);
 
 
 
