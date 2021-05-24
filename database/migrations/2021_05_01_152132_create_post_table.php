@@ -20,7 +20,7 @@ class CreatePostTable extends Migration
             $table->text('content');
             $table->text('slug');
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories');// ->onDelete('cascade') on delete cascade pour supprimer les lien entre table category and posts 
             $table->string('featured');
             $table->timestamps();
             $table->softDeletes();
@@ -35,6 +35,6 @@ class CreatePostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post');
+        Schema::dropIfExists('posts');
     }
 }
