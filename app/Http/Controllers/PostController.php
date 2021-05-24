@@ -108,7 +108,9 @@ class PostController extends Controller
     {
         //
           $post =Post::find($id);
-          return view('admin.posts.edit')->with('post',$post)->with('categories',Category::all());       
+          return view('admin.posts.edit')->with('post',$post)
+                                         ->with('categories',Category::all())
+                                         ->with('tags',Tag::all());       
     }
 
     /**
@@ -142,6 +144,8 @@ class PostController extends Controller
        $post->slug = str::slug($request->title); // dad function dyal helper str kadiir slug l text katredo ligne whda b "_"
 
        $post->save();
+
+       $post->tags()->sync($request->selectedtags); // methode sync bnch t3yt 3la attach methode li ka associer post b tag 
        Session::flash('message', 'post updated succesfuly!'); 
        Session::flash('alert-class', 'alert-success'); 
        

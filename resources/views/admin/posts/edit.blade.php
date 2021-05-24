@@ -2,25 +2,25 @@
 @section('content')
 
 <div class="card">
-    <div class="card-title">
-    <h2>        update  post : {{$post->id}}
-</h2>
+    <div class="card-header">
+        <h2> update post : {{$post->title}}
+        </h2>
     </div>
     <div class="card-body">
-    @if(count($errors)>0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
+        @if(count($errors)>0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+                @endforeach
+            </ul>
+        </div>
+        @endif
 
-@if(Session::has('message'))
+        @if(Session::has('message'))
         <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 
-@endif
+        @endif
         <form action="{{route('post.update',['id'=> $post->id])}}" method="post" enctype="multipart/form-data">
 
             {{csrf_field()}}
@@ -37,27 +37,57 @@
                 <input type="file" name="featured" class="form-control" id="featured">
             </div>
 
-<div class="form-group">
+            <div class="form-group">
 
 
-<label for="category">select a Categoory</label>
+                <label for="category">select a Categoory</label>
 
 
-<select name="category_id" id="category" class="form-control">
+                <select name="category_id" id="category" class="form-control">
 
-@foreach($categories as $category)
+                    @foreach($categories as $category)
 
-<option value="{{$category->id}}"  {{ ($category->id) == $post->category_id ? 'selected' : '' }}   >{{$category->name}}</option>  
-<!-- fixing problem of selected option by defult  -->
-@endforeach
+                    <option value="{{$category->id}}" {{ ($category->id) == $post->category->id ? 'selected' : '' }}>  <!-- hena kanchoofo wach id dyal category == id dyal category li belongs to post dyalna -->
+                        {{$category->name}}</option>
+                    <!-- fixing problem of selected option by defult  -->
+                    @endforeach
 
-</select>
-</div>
+                </select>
+            </div>
+            <div class="form-group">
 
+
+                <label for="tags">select Tags</label>
+
+
+
+                         @foreach($tags as $tag) <!-- had loop1 bach naffichiw ga3 les tags li kaynin   -->
+                 
+                <div class="checkbox">
+
+
+                    <label for="tag">
+<!--  had loop 2 bach  nchoofo les tag li f table pivo  -->
+<!--   had if blow wach id dyal tag li f table pivo === id li f table tags -->
+                        <input type="checkbox" name="selectedtags[]" value="{{$tag->id}}" id="tag"
+                         @foreach($post->tags as $t) 
+
+                                   @if($tag->id == $t->id) 
+                                                               checked
+                                   @endif
+                        @endforeach
+
+                        > {{$tag->tag}}</label>
+
+                </div>
+                    @endforeach
+
+            </div>
             <div class="form-group">
 
                 <label for="content">Content</label>
-                <textarea name="content" id="content" cols="30"  rows="10" class="form-control"> {{$post->content}}</textarea>
+                <textarea name="content" id="content" cols="30" rows="10"
+                    class="form-control"> {{$post->content}}</textarea>
             </div>
             <div class="form-group">
                 <div class="text-center">
