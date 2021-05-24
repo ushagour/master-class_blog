@@ -49,7 +49,6 @@
 
                     <option value="{{$category->id}}" {{ ($category->id) == $post->category->id ? 'selected' : '' }}>  <!-- hena kanchoofo wach id dyal category == id dyal category li belongs to post dyalna -->
                         {{$category->name}}</option>
-                    <!-- fixing problem of selected option by defult  -->
                     @endforeach
 
                 </select>
