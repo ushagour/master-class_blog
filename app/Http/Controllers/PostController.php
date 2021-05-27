@@ -62,18 +62,15 @@ class PostController extends Controller
         ]);
 
 
-        $featured_name="no_ files";
+        $path="no_ files";
         if ($request->hasFile('featured')) {
-       $distination_path = 'public/featured';
-       $featured= $request->file('featured');
-       $featured_name= $featured->getClientOriginalName();
-       $path = $request->file('featured')->storeAs($distination_path,$featured_name);
+            $path = $request->file('featured')->store('featured');
 
        }
 
         $newpost = new Post;
         $newpost->title = $request->title;
-        $newpost->featured = $featured_name;
+        $newpost->featured = $path;
         $newpost->content = $request->content;
         $newpost->category_id = $request->category_id;
         $newpost->slug = str::slug($request->title); // dad function dyal helper str kadiir slug l text katredo ligne whda b "_"
@@ -134,8 +131,10 @@ class PostController extends Controller
         $post = Post::find($id);
 
         $post->delete();
-        session()->flash('msg','profile deleded succesfuly !');
+     Session::flash('message', 'post deleded succesfuly!'); 
+     Session::flash('alert-class', 'alert-info'); 
+     
 
-        return redirect()->route('home');
+        return redirect()->back();
     }
 }
