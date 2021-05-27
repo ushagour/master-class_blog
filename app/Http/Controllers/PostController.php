@@ -132,7 +132,47 @@ class PostController extends Controller
 
         $post->delete();
      Session::flash('message', 'post deleded succesfuly!'); 
-     Session::flash('alert-class', 'alert-info'); 
+     Session::flash('alert-class', 'alert-danger'); 
+     
+
+        return redirect()->back();
+    }
+
+    public function trashed()
+    {
+        // geting trashed data 
+        $posts = Post::onlyTrashed()->get();
+        return view('admin.posts.trashed')->with('posts',$posts);
+    }
+
+
+
+
+
+
+    public function restore($id)
+    {
+        //
+
+        $post = Post::withTrashed()->where('id',$id)->first();
+
+        $post->restore();
+     Session::flash('message', 'post restored succesfuly!'); 
+     Session::flash('alert-class', 'alert-success'); 
+     
+
+        return redirect()->back();
+    }
+
+    public function kill($id)
+    {
+        //
+        $post = Post::withTrashed()->where('id',$id)->first();
+
+
+        $post->forceDelete();
+       Session::flash('message', 'post deleded defunetly!'); 
+       Session::flash('alert-class', 'alert-danger'); 
      
 
         return redirect()->back();

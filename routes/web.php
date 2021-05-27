@@ -45,7 +45,10 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/post/create', 'PostController@create')->name('post.create');
     Route::post('/post/store', 'PostController@store')->name('post.store');
     Route::get('/post/edit/{id}', 'PostController@edit')->name('post.edit');
-    Route::get('/post/delete/{id}', 'PostController@destroy')->name('post.delete');//
+    Route::get('/post/delete/{id}', 'PostController@destroy')->name('post.delete');// softdelete 
+    Route::get('/post/trashed', 'PostController@trashed')->name('post.trashed');
+    Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');// restoring softdelete data 
+    Route::get('/post/kill/{id}', 'PostController@kill')->name('post.kill');// restoring softdelete data 
 
     //end region post
 });

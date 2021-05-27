@@ -91,6 +91,10 @@
             
             </li>
             <li class="list-group-item">
+          <a href="{{route('post.trashed')}}">ALL Trashed Posts</a>
+            
+            </li>
+            <li class="list-group-item">
           <a href="{{route('post.create')}}">crete new post</a>
             
             </li>
