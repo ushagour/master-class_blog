@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div class="card">
-    <div class="card-heading">
-        create new category
-    </div>
+<div class="card-header">
+Create New Category
+  </div>
     <div class="card-body">
 
         @if(count($errors)>0)

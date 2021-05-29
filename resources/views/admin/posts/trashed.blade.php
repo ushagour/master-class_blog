@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="card">
+<div class="card-header">
+
+<h3>Trashed posts !</h3>
+
+  </div>
   <div class="card-body">
   
 @if(Session::has('message'))
@@ -16,7 +21,7 @@
     
     </thead>
     <tbody>
-
+@if($posts->count()>0)
     @foreach($posts as $post)
         <tr>
             <td>     <img src="{{asset('/'. $post->featured)}}" width="50px" height="50px" /> </td>   
@@ -25,6 +30,12 @@
 
         </tr>
      @endforeach
+@else
+
+<tr>
+  <td class="text-center" colspan="5">no trashed post yet !</td>
+</tr>
+@endif
     </tbody>
 </table>
   </div>

@@ -2,9 +2,8 @@
 @section('content')
 
 <div class="card">
-    <div class="card-title">
-    <h2>        create new post
-</h2>
+    <div class="card-header">
+    <h2>        Create New post </h2>
     </div>
     <div class="card-body">
     @if(count($errors)>0)
