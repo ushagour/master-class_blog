@@ -102,8 +102,8 @@ class PostController extends Controller
     public function edit($id)
     {
         //
-
-        
+          $post =Post::find($id);
+          return view('admin.posts.edit')->with('post',$post)->with('categories',Category::all());       
     }
 
     /**
@@ -116,6 +116,32 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $post = Post::find($id);
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',//|unique:posts todo see what happen
+            'content' => 'required|max:1000',
+            'category_id' => 'required',
+        ]);
+        if ($request->hasFile('featured')) {
+            $path = $request->file('featured')->store('featured');
+
+            $post->featured = $path;
+
+            /*ila kan l file ghadi update  ytbdl f data base  sinon khelli l9edim */
+       }
+
+       $post->title = $request->title;
+       $post->content = $request->content;
+       $post->category_id = $request->category_id;
+       $post->slug = str::slug($request->title); // dad function dyal helper str kadiir slug l text katredo ligne whda b "_"
+
+       $post->save();
+       Session::flash('message', 'post updated succesfuly!'); 
+       Session::flash('alert-class', 'alert-success'); 
+       
+         return redirect()->route('post.index');
+  
     }
 
     /**
