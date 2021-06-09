@@ -114,6 +114,14 @@
           <a href="{{route('tag.create')}}">crete new tags</a>
             
             </li>
+            <li class="list-group-item">
+          <a href="{{route('users.index')}}">Users</a>
+            
+            </li>
+            <li class="list-group-item">
+          <a href="{{route('user.create')}}">crete new user</a>
+            
+            </li>
         </ul>
         
         </div>

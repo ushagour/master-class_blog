@@ -11,20 +11,20 @@
 
 <thead>
 
-<th>
- <td>avatar </td>
- <td>name  </td>
- <td>permetions  </td>
- <td>action  </td>
+<tr>
+ <th>avatar </th>
+ <th>name  </th>
+ <th>permetions  </th>
+ <th>action  </th>
  
- </th>
+ </tr>
 </thead>
     <tbody>
     @if($users->count()>0)
 
     @foreach($users as $user)
         <tr>
-            <td> <img src="assets({{$user->avatar}} )" alt="{{$user->name}}"> </td>   
+            <td>  <img src="{{asset('/'. $user->avatar)}}" width="50px" height="50px"  alt="{{$user->name}}"/> </td>   
             <td>{{$user->name}}  </td>   
             <td> permitions  </td>   
             <td> <a href="{{route('user.edit',['id'=>$user->id])}}" class="btn btn-xs btn-info">edit</a> <a href="{{route('user.destroy',['id'=>$user->id])}}" class="btn btn-xs btn-danger">delete</a></td>   

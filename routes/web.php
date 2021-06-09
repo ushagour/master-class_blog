@@ -69,11 +69,26 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
     //end region tags
 
+    #region users
+    Route::get('/users', 'UserController@index')->name('users.index');
+    Route::get('/user/create', 'UserController@create')->name('user.create');
+    Route::post('/user/store', 'UserController@store')->name('user.store');
+    Route::get('/user/edit/{id}', 'UserController@edit')->name('user.edit');
+    Route::post('/user/update/{id}', 'UserController@update')->name('user.update');
+    Route::get('/user/delete/{id}', 'UserController@destroy')->name('user.destroy');// nb 3lach makhdamach delete methode
+    //end region users
+
 
 
 
 
 });
+
+
+
+
+
+
 
 #test
 // testing our relatinsheep elequent with proprtys 

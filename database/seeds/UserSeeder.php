@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         $user=  App\User::create([ 
         'name' => Str::random(10),
         'email' => Str::random(10).'@gmail.com',
-        'password' => Hash::make('password'),
+        'password' => Hash::make('password'), //remember the password is passowrd by defult 
         'is_admin'  =>1
       ]);
       // insetion by quiry builder

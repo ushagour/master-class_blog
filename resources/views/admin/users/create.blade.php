@@ -3,33 +3,39 @@
 
 <div class="card">
     <div class="card-header">
-    <h2>        Create New Tag </h2>
+        <h2> Create New user </h2>
     </div>
     <div class="card-body">
-    @if(count($errors)>0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
+        @if(count($errors)>0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+                @endforeach
+            </ul>
+        </div>
+        @endif
 
-@if(Session::has('message'))
+        @if(Session::has('message'))
         <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 
-@endif
-        <form action="{{route('tag.store')}}" method="post" enctype="multipart/form-data">
+        @endif
+        <form action="{{route('user.store')}}" method="post" enctype="multipart/form-data">
 
             {{csrf_field()}}
+            <div class="form-group">
 
-            <div class="form-group col-md-4 offset-md-4"> 
+                <label for="name">Name</label>
 
-                <label for="tag">Tag</label>
-
-                <input type="text" class="form-control" name="tag" placeholder="#" id="tag">
+                <input type="text" class="form-control" name="name" id="name">
             </div>
+            <div class="form-group">
+
+                <label for="name">Email</label>
+
+                <input type="text" class="form-control" name="email" id="email">
+            </div>
+ 
 
 
 
