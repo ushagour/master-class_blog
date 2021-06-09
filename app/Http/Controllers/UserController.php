@@ -10,6 +10,7 @@ use Illuminate\Http\UploodedFile; //classe pour utilser la methode store
 use Illuminate\Support\Str; //
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use NunoMaduro\Collision\Adapters\Phpunit\State;
 use Symfony\Component\HttpKernel\Profiler\Profiler;
 
 class UserController extends Controller
@@ -23,7 +24,7 @@ class UserController extends Controller
     {
         //
         $users = User::all();
-        return view('admin.users.index',["users"=>$users]);
+        return view('admin.users.index')->with('users',$users);
         
     }
 
@@ -50,7 +51,7 @@ class UserController extends Controller
 
         $valition = $request->validate([
             'name' => 'required|max:255',//|unique:posts y3nii ykoon 1
-            'email' => 'required|email|unique',
+            'email' => 'required|email|unique:users',
 
         ]);
 
@@ -65,7 +66,8 @@ $user =  User::create([
 
 $profile = Profile::create([
 #les autres  champs sont par defult null 
-'user_id'=>$user->id
+'user_id'=>$user->id,
+'avatar'=>'storage/defult_user.png'
 
 ]);
 
@@ -117,5 +119,26 @@ return redirect()->route('users.index');
     public function destroy($id)
     {
         //
+
+    
+    }
+
+    /**
+     * change stage of boolien champ isadmin.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function toggle($id,$state)
+    {
+        //
+
+        $user = User::find($id);
+        $user->is_admin = !$state;
+        $user->save();
+        Session::flash("success",'Succefuly permition changed ');
+        return redirect()->route('users.index');
+
+
     }
 }

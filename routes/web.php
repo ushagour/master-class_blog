@@ -76,6 +76,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/user/edit/{id}', 'UserController@edit')->name('user.edit');
     Route::post('/user/update/{id}', 'UserController@update')->name('user.update');
     Route::get('/user/delete/{id}', 'UserController@destroy')->name('user.destroy');// nb 3lach makhdamach delete methode
+    Route::get('/user/toggle/{id}/{state}', 'UserController@toggle')->name('users.toggle'); 
+    
     //end region users
 
 
@@ -94,6 +96,6 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 // testing our relatinsheep elequent with proprtys 
 Route::get('/test', function(){
  
-return App\User::find(1)->profile;  //  bghiina nchpofo les tag associer lwahd post by id dyaloo
+return App\User::find(1)->profile->avatar;  //  bghiina nchpofo les tag associer lwahd post by id dyaloo
 
 });

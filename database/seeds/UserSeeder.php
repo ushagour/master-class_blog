@@ -31,10 +31,10 @@ class UserSeeder extends Seeder
         //     'is_admin'  =>1
         // ]);
         DB::table('profiles')->insert([
-            'avatar' => 'link to img',
+            'avatar' => 'storage/defult_user.png',
             'about' =>  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, dignissimos quisquam molestiae consequuntur dicta eveniet voluptate incidunt quo ullam cupiditate, odit natus ducimus ad, aut totam deserunt illum repellendus? Quidem.',
-            'facebook' => 'link to img',
-            'youtube' => 'link to img',
+            'facebook' => 'page facebook',
+            'youtube' => 'chaine youtube',
             'user_id' => $user->id,
         ]);
     }

@@ -24,9 +24,20 @@
 
     @foreach($users as $user)
         <tr>
-            <td>  <img src="{{asset('/'. $user->avatar)}}" width="50px" height="50px"  alt="{{$user->name}}"/> </td>   
+            <td>  <img src="{{asset('/'. $user->profile['avatar'])}}" width="50px" height="50px"  alt="{{$user->name}}"/> </td>   
             <td>{{$user->name}}  </td>   
-            <td> permitions  </td>   
+            <td> 
+        
+        @if(!$user->is_admin)
+    <a href="{{route('users.toggle',['id'=>$user->id,'state'=>$user->is_admin])}}" class="btn btn-xs btn-success">make it admin </a>     
+    @else
+        <a href="{{route('users.toggle',['id'=>$user->id,'state'=>$user->is_admin])}}" class="btn btn-xs btn-danger"> remove permetion </a>    
+        @endif
+
+
+
+
+          </td>   
             <td> <a href="{{route('user.edit',['id'=>$user->id])}}" class="btn btn-xs btn-info">edit</a> <a href="{{route('user.destroy',['id'=>$user->id])}}" class="btn btn-xs btn-danger">delete</a></td>   
         </tr>
      @endforeach
