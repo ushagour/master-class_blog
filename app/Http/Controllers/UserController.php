@@ -15,6 +15,18 @@ use Symfony\Component\HttpKernel\Profiler\Profiler;
 
 class UserController extends Controller
 {
+
+
+
+
+
+    public function __construnct()
+
+    {
+
+$this->middleware('Admin'); // all function in this controller willle be use Admin middelware to cheeck if admin or not !
+
+    }
     /**
      * Display a listing of the resource.
      *

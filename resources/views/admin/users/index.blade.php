@@ -4,7 +4,11 @@
 <div class="card-header">
 
 <h3> Users managment ! </h3>
+  
+@if(Session::has('info'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('info') }}</p>
 
+@endif
   </div>
   <div class="card-body">
   <table class="table">

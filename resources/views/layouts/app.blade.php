@@ -114,6 +114,9 @@
           <a href="{{route('tag.create')}}">crete new tags</a>
             
             </li>
+
+@if(Auth::user()->is_admin)
+
             <li class="list-group-item">
           <a href="{{route('users.index')}}">Users</a>
             
@@ -122,6 +125,9 @@
           <a href="{{route('user.create')}}">crete new user</a>
             
             </li>
+
+@endif
+
         </ul>
         
         </div>
