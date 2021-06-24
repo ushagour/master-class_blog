@@ -19,7 +19,9 @@ class CreateProfilesTable extends Migration
             $table->text('about')->nullable();
             $table->string('facebook')->nullable();
             $table->string('youtube')->nullable();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');// ->onDelete('cascade') on delete cascade pour supprimer les lien entre table category and posts 
+
             $table->timestamps();
         });
     }

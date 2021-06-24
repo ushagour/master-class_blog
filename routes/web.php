@@ -78,6 +78,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/user/delete/{id}', 'UserController@destroy')->name('user.destroy');// nb 3lach makhdamach delete methode
     Route::get('/user/toggle/{id}/{state}', 'UserController@toggle')->name('users.toggle'); 
     
+//profile
+    Route::get('/profile', 'ProfileController@index')->name('profile.index');
+    Route::post('/profile/update/{id}', 'ProfileController@update')->name('profile.update');
     //end region users
 
 

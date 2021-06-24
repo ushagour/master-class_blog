@@ -114,6 +114,10 @@
           <a href="{{route('tag.create')}}">crete new tags</a>
             
             </li>
+            <li class="list-group-item">
+          <a href="{{route('profile.index')}}">Profile</a>
+            
+            </li>
 
 @if(Auth::user()->is_admin)
 
