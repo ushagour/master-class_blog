@@ -74,6 +74,12 @@ class ProfileController extends Controller
     public function edit($id)
     {
         //
+
+ 
+
+
+
+
     }
 
     /**
@@ -86,6 +92,46 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validatedData = $request->validate([
+
+            'name' => 'required|max:255',
+            'email' => 'required|email'
+          
+        ]);
+
+         $user = Auth::user();
+
+ if ($request->hasFile('avatar')) {
+    
+            $path = $request->file('avatar')->store('featured');
+            $user->profile->avatar=$path;     
+            $user->profile->save();
+ }
+
+ $user->name = $request->name;
+ $user->email = $request->email;
+ $user->profile->facebook = $request->facebook;
+ $user->profile->youtube = $request->youtube;
+ $user->profile->about = $request->about;
+
+
+ if ($request->has('newpassword')) {
+
+$NewPassword = Hash::make($request->newpassword);
+
+echo $user->password = $NewPassword; //Todo hta nkml had editing 
+// $user->save();
+     # code...
+ }
+
+
+//  $user->save();
+//  $user->profile->save();
+//  Session::flash('info', 'profile updated succesfuly!'); 
+//  Session::flash('alert-class', 'alert-success'); 
+ 
+     // return redirect()->back();
+        
     }
 
     /**

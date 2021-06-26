@@ -3,7 +3,10 @@
 
 <div class="card card-default">
     <div class="card-header">
+@if(Session::has('info'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('info') }}</p>
 
+@endif
     </div>
     <div class="card-body">
     @if(count($errors)>0)
@@ -50,7 +53,7 @@
 
                             <div class="col-md-6">
                                 <input id="new-password" type="password" class="form-control @error('password') is-invalid @enderror"
-                                 name="password" required autocomplete="new-password">
+                                 name="newpassword" required autocomplete="new-password">
 
                             </div>
                         </div>
@@ -68,7 +71,7 @@
 
                             <div class="col-md-6">
                                 <input id="new-Facebook" type="text" class="form-control @error('Facebook') is-invalid @enderror" 
-                                name="Facebook" required autocomplete="new-Facebook" value="{{  $user->profile->facebook}}">
+                                name="facebook" required autocomplete="new-Facebook" value="{{  $user->profile->facebook}}">
 
                             </div>
                         </div>
@@ -78,7 +81,7 @@
 
                             <div class="col-md-6">
                                 <input id="new-Youtube" type="text" class="form-control @error('Youtube') is-invalid @enderror" 
-                                name="Youtube" required autocomplete="new-Youtube" value="{{  $user->profile->youtube}}">
+                                name="youtube" required autocomplete="new-Youtube" value="{{  $user->profile->youtube}}">
 
                             </div>
                         </div>
@@ -87,11 +90,18 @@
 
                             <div class="col-md-6">
 
-<textarea name="about" id="about" cols="6" rows="3">{{  $user->about}} </textarea>
+<textarea name="about" id="about" cols="40" rows="5" >{{  $user->about}} </textarea>
                             </div>
                         </div>
 
-         
+             <div class="form-group text-center">
+
+
+             <button type="submit" class="btn btn-success">Update</button>
+
+       
+
+             </div>
         </form>
 
     </div>

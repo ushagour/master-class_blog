@@ -15,9 +15,7 @@ use App\Post;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index');
 
 Auth::routes();
 
@@ -73,14 +71,15 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/users', 'UserController@index')->name('users.index');
     Route::get('/user/create', 'UserController@create')->name('user.create');
     Route::post('/user/store', 'UserController@store')->name('user.store');
-    Route::get('/user/edit/{id}', 'UserController@edit')->name('user.edit');
     Route::post('/user/update/{id}', 'UserController@update')->name('user.update');
     Route::get('/user/delete/{id}', 'UserController@destroy')->name('user.destroy');// nb 3lach makhdamach delete methode
     Route::get('/user/toggle/{id}/{state}', 'UserController@toggle')->name('users.toggle'); 
     
 //profile
     Route::get('/profile', 'ProfileController@index')->name('profile.index');
+    Route::get('/profile/edit/{id}', 'ProfileController@edit')->name('profile.edit');
     Route::post('/profile/update/{id}', 'ProfileController@update')->name('profile.update');
+
     //end region users
 
 

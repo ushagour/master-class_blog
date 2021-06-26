@@ -42,7 +42,7 @@
 
 
           </td>   
-            <td> <a href="{{route('user.edit',['id'=>$user->id])}}" class="btn btn-xs btn-info">edit</a> <a href="{{route('user.destroy',['id'=>$user->id])}}" class="btn btn-xs btn-danger">delete</a></td>   
+            <td> <a href="{{route('user.destroy',['id'=>$user->id])}}" class="btn btn-xs btn-danger">delete</a></td>   
         </tr>
      @endforeach
 
