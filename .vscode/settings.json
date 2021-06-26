@@ -1,0 +1,48 @@
+{
+	"files.exclude": {
+		// route files hanya ytbedel daba chti ? 
+		".editorconfig": true,
+		".gitattributes": true,
+		".gitignore": true,
+		".styleci.yml": true,
+		"package.json": true,
+		"composer.json": true,
+		"composer.lock": true,
+		"phpunit.xml": true,
+		"README.md" : true,
+		"webpack.mix.js" : true,
+		"artisan" : true,
+		"server.php" : true,
+		".env.example" : true,
+
+		//folders
+		"**/vendor" : true,
+		"**/tests" : true,
+		// "**/database" : true,
+		"**/database/factories" : true,
+		"**/database/seeds" : true,
+		"**/storage" : true,
+
+		//files in folders
+		"**/app/Console" : true,
+		"**/app/Exceptions" : true,
+		"**/app/Providers" : true,
+		"**/bootstrap" : true,
+		"**/config" : true,
+
+		"**/routes/api.php" : true,
+		"**/routes/channels.php" : true,
+		"**/routes/console.php" : true,
+
+		"**/resources/js" : true,
+		"**/resources/lang" : true,
+		"**/resources/sass" : true,
+
+		"**/app/Http/Middleware" : true,
+		"**/app/Http/Kernel.php" : true,
+	},
+	"editor.fontSize": 18,
+
+	// "editor.fontFamily": "Comics",
+
+}
