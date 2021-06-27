@@ -18,7 +18,7 @@
         </ul>
     </div>
 @endif
-        <form action="{{route('profile.update',['id'=>1])}}" method="post">
+        <form action="{{route('profile.update',['id'=>1])}}" method="post"  enctype="multipart/form-data">
 
             {{csrf_field()}}
             <div class="form-group row">
@@ -43,7 +43,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right"> old password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="old-password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="old-password"  autocomplete="password">
 
                             </div>
                         </div>
@@ -53,7 +53,7 @@
 
                             <div class="col-md-6">
                                 <input id="new-password" type="password" class="form-control @error('password') is-invalid @enderror"
-                                 name="newpassword" required autocomplete="new-password">
+                                 name="newpassword"  autocomplete="new-password">
 
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             <label for="new-avatar" class="col-md-4 col-form-label text-md-right">Edit  Avatar</label>
 
                             <div class="col-md-6">
-<input type="file" name="avtar"  class="form-control " id="new-avatar">
+<input type="file" name="avatar"  class="form-control " id="new-avatar">
                             </div>
                         </div>
 
@@ -71,7 +71,7 @@
 
                             <div class="col-md-6">
                                 <input id="new-Facebook" type="text" class="form-control @error('Facebook') is-invalid @enderror" 
-                                name="facebook" required autocomplete="new-Facebook" value="{{  $user->profile->facebook}}">
+                                name="facebook"  autocomplete="new-Facebook" value="{{  $user->profile->facebook}}">
 
                             </div>
                         </div>
@@ -81,7 +81,7 @@
 
                             <div class="col-md-6">
                                 <input id="new-Youtube" type="text" class="form-control @error('Youtube') is-invalid @enderror" 
-                                name="youtube" required autocomplete="new-Youtube" value="{{  $user->profile->youtube}}">
+                                name="youtube"  autocomplete="new-Youtube" value="{{  $user->profile->youtube}}">
 
                             </div>
                         </div>

@@ -100,13 +100,15 @@ class ProfileController extends Controller
         ]);
 
          $user = Auth::user();
-
- if ($request->hasFile('avatar')) {
+ if ($request->has('avatar')) {
     
-            $path = $request->file('avatar')->store('featured');
-            $user->profile->avatar=$path;     
+           $path = $request->file('avatar')->store('avatars');
+              $user->profile->avatar=$path;     
+            // echo $path;
+            // dd($user->profile->avatar) ;
             $user->profile->save();
  }
+
 
  $user->name = $request->name;
  $user->email = $request->email;
@@ -119,18 +121,17 @@ class ProfileController extends Controller
 
 $NewPassword = Hash::make($request->newpassword);
 
-echo $user->password = $NewPassword; //Todo hta nkml had editing 
-// $user->save();
-     # code...
+ $user->password = $NewPassword; //Todo hta nkml had editing 
+$user->save();
  }
 
 
-//  $user->save();
-//  $user->profile->save();
-//  Session::flash('info', 'profile updated succesfuly!'); 
-//  Session::flash('alert-class', 'alert-success'); 
+ $user->save();
+ $user->profile->save();
+ Session::flash('info', 'profile updated succesfuly!'); 
+ Session::flash('alert-class', 'alert-success'); 
  
-     // return redirect()->back();
+     return redirect()->back();
         
     }
 
