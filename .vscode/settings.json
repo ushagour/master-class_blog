@@ -20,14 +20,14 @@
 		"**/tests" : true,
 		// "**/database" : true,
 		"**/database/factories" : true,
-		"**/storage" : true,
+		// "**/storage" : true,
 
 		//files in folders
 		"**/app/Console" : true,
 		"**/app/Exceptions" : true,
 		"**/app/Providers" : true,
 		"**/bootstrap" : true,
-		"**/config" : true,
+		// "**/config" : true,
 
 		"**/routes/api.php" : true,
 		"**/routes/channels.php" : true,
