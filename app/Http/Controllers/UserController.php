@@ -79,7 +79,7 @@ $user =  User::create([
 $profile = Profile::create([
 #les autres  champs sont par defult null 
 'user_id'=>$user->id,
-'avatar'=>'storage/defult_user.png'
+'avatar'=>'avatars/defult_user.png'
 
 ]);
 
@@ -131,9 +131,12 @@ return redirect()->route('users.index');
     public function destroy($id)
     {
         //
-
-    
-    }
+                $user =User::find($id);
+                $user->profile->delete();
+                $user->delete();
+                Session::flush('info','user deleted succesfuly ');
+             return   redirect()->back();
+ }
 
     /**
      * change stage of boolien champ isadmin.

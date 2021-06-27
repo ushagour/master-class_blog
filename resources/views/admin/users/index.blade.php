@@ -33,16 +33,24 @@
             <td> 
         
         @if(!$user->is_admin)
-    <a href="{{route('users.toggle',['id'=>$user->id,'state'=>$user->is_admin])}}" class="btn btn-xs btn-success">make it admin </a>     
+    <a href="{{route('users.toggle',['id'=>$user->id,'state'=>$user->is_admin])}}" class="btn btn-sm btn-success">make it admin </a>     
     @else
-        <a href="{{route('users.toggle',['id'=>$user->id,'state'=>$user->is_admin])}}" class="btn btn-xs btn-danger"> remove permetion </a>    
+        <a href="{{route('users.toggle',['id'=>$user->id,'state'=>$user->is_admin])}}" class="btn btn-sm btn-danger"> remove permetion </a>    
         @endif
 
 
 
 
           </td>   
-            <td> <a href="{{route('user.destroy',['id'=>$user->id])}}" class="btn btn-xs btn-danger">delete</a></td>   
+            <td> 
+            
+            @if(Auth::id() !== $user->id )
+            <a href="{{route('user.destroy',['id'=>$user->id])}}" class="btn btn-xs btn-danger">delete</a>
+            @endif
+            
+            </td>   
+      
+      
         </tr>
      @endforeach
 
