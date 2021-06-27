@@ -4,6 +4,10 @@
 <div class="card">
     <div class="card-header">
     <h2>        Create New Tag </h2>
+    @if(Session::has('info'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('info') }}</p>
+
+@endif
     </div>
     <div class="card-body">
     @if(count($errors)>0)

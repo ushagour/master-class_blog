@@ -3,6 +3,14 @@
 <div class="card">
 <div class="card-header">
 Create New Category
+
+
+@if(Session::has('info'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+
+@endif
+
+
   </div>
     <div class="card-body">
 
