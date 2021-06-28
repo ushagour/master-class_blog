@@ -1,4 +1,7 @@
 @extends('layouts.app')
+   @section('style')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    @stop
 @section('content')
 
 <div class="card">
@@ -71,7 +74,7 @@
             <div class="form-group">
 
                 <label for="content">Content</label>
-                <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+                <textarea name="content" id="summernote" cols="30" rows="10" class="form-control "></textarea>
             </div>
             <div class="form-group">
                 <div class="text-center">
@@ -85,3 +88,16 @@
 
 </div>
 @stop
+
+    @section('scrypts')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
+        <script>
+      $('#summernote').summernote({
+        placeholder: 'Content of the post',
+        tabsize: 2,
+        height: 100
+      });
+    </script>
+    @stop
