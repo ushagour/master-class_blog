@@ -40,8 +40,8 @@ class PostController extends Controller
             if ($categories->count() ==0 || $tags->count() ==0) {
 
 // had condition matkhliich user y cree post ila makanch tags w category 
-            session()->flash('info','you must have categories  before crateing new post');
-        return    redirect()->back();
+            Session::flash('message','you must have categories  before crateing new post');
+             return redirect()->back();
             }
 
 
