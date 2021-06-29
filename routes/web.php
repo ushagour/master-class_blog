@@ -82,7 +82,11 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
     //end region users
 
+// region setting
+Route::get('/setting', 'SettingController@index')->name('setting.index');
+Route::post('/setting/update/{id}', 'SettingController@update')->name('setting.update');
 
+//end region 
 
 
 

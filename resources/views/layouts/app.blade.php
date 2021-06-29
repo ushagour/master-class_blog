@@ -136,6 +136,10 @@
           <a href="{{route('user.create')}}">crete new user</a>
             
             </li>
+            <li class="list-group-item">
+          <a href="{{route('setting.index')}}">Settings</a>
+            
+            </li>
 
 @endif
 
