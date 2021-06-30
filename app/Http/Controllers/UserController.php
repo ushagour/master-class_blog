@@ -135,7 +135,7 @@ return redirect()->route('users.index');
                 $user->profile->delete();
                 $user->delete();
                 Session::flush('info','user deleted succesfuly ');
-                 return   redirect()->route('users.indexsss');
+                 return   redirect()->back();
  }
 
     /**
