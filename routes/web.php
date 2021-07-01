@@ -15,11 +15,7 @@ use App\Post;
 |
 */
 
-Route::get('/',function(){
-
-
-   return view('welcome');
-});
+Route::get('/','FrontEndController@index');
 
 Auth::routes();
 

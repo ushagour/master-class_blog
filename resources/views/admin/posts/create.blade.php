@@ -74,7 +74,9 @@
             <div class="form-group">
 
                 <label for="content">Content</label>
-                <textarea name="content" id="summernote" cols="30" rows="10" class="form-control "></textarea>
+                <div class="form-group">
+                  <textarea class="form-control" name="content" id="content" cols="30" rows="10">{{ old('body') }}</textarea>
+                </div>
             </div>
             <div class="form-group">
                 <div class="text-center">
@@ -94,8 +96,7 @@
 
 
         <script>
-      $('#summernote').summernote({
-        placeholder: 'Content of the post',
+      $('#content').summernote({
         tabsize: 2,
         height: 100
       });

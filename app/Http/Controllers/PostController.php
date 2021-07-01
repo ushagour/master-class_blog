@@ -63,12 +63,12 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',//|unique:posts todo see what happen
             'featured' => 'required|image',
-            'content' => 'required|max:1000',
+            // 'content' => 'required|max:1000',
             'category_id' => 'required',
         ]);
 
 
-        $path="no_ files";
+        $path="no_files";
         if ($request->hasFile('featured')) {
             $path = $request->file('featured')->store('featured');
 
