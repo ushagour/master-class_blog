@@ -79,7 +79,7 @@ class PostController extends Controller
         $newpost->featured = $path;
         $newpost->content = $request->content;
         $newpost->category_id = $request->category_id;
-        $newpost->slug = str::slug($request->title); // dad function dyal helper str kadiir slug l text katredo ligne whda b "_"
+        $newpost->slug = str::slug($request->title); // had function dyal helper str kadiir slug l text katredo ligne whda b "_"
 
 
         
