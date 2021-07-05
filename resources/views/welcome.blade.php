@@ -55,7 +55,7 @@
                         <div class="post-thumb">
                             <img src="{{asset('/'. $first_post->featured)}}" alt="{{asset('/'. $first_post->title)}}">
                             <div class="overlay"></div>
-                            <a href="app/img/post1.jpg" class="link-image js-zoom-image">
+                            <a href="{{asset('/'. $first_post->featured)}}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
                             <a href="#" class="link-post">
@@ -107,9 +107,9 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="app/img/2.png" alt="seo">
+                            <img src="{{asset('/'. $second_post->featured)}}" alt="seo">
                             <div class="overlay"></div>
-                            <a href="app/img/2.png" class="link-image js-zoom-image">
+                            <a href="{{asset('/'. $second_post->featured)}}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
                             <a href="#" class="link-post">
@@ -122,7 +122,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">The Important & Standard Post Format</a>
+                                        <a href="15_blog_details.html">{{$second_post->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -132,14 +132,14 @@
                                             <i class="seoicon-clock"></i>
 
                                             <time class="published" datetime="2016-04-17 12:00:00">
-                                                April 17, 2016
+                                                {{$second_post->created_at->diffForHumans()}}
                                             </time>
 
                                         </span>
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">Video</a>
+                                            <a href="#"> {{$second_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -157,9 +157,9 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="app/img/3.jpg" alt="seo">
+                            <img src="{{asset('/'. $therd_post->featured)}}" alt="seo">
                             <div class="overlay"></div>
-                            <a href="app/img/3.jpg" class="link-image js-zoom-image">
+                            <a href="{{asset('/'. $therd_post->featured)}}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
                             <a href="#" class="link-post">
@@ -172,7 +172,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">The Important & Standard Post Format</a>
+                                        <a href="15_blog_details.html">{{$therd_post->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -182,14 +182,14 @@
                                             <i class="seoicon-clock"></i>
 
                                             <time class="published" datetime="2016-04-17 12:00:00">
-                                                April 17, 2016
+                                         {{$therd_post->created_at->diffForHumans()}}
                                             </time>
 
                                         </span>
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">Video</a>
+                                            <a href="#">{{$therd_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
