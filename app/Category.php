@@ -9,9 +9,9 @@ class Category extends Model
 {
     //
     use SoftDeletes;
-    public function Posts()
+    public function posts()
     {
         // nb: hena 3dna hasMany y3niii (1.n) dakchii lach smiina function plurel 
-          return $this->hasMany(Category::class);
+          return $this->hasMany(Post::class);
     }
 }
