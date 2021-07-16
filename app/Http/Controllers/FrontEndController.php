@@ -14,7 +14,7 @@ class FrontEndController extends Controller
  {
      return view('welcome')
      ->with('title',Setting::first()->site_name)
-     ->with('Categorys',Category::Take(4)->get())// take query builder methode 
+     ->with('Categorys',Category::Take(5)->get())// take query builder methode 
      ->with('first_post',Post::orderBy('created_at','desc')->first())// first post the last created akhiir wahd t crea 
      ->with('second_post',Post::orderBy('created_at','desc')->skip(1)->take(1)->get()->first())
      ->with('therd_post',Post::orderBy('created_at','desc')->skip(2)->take(1)->get()->first())
@@ -31,6 +31,17 @@ class FrontEndController extends Controller
      6.do the same thing with therd post 
      */
  }
+public function SinglePost($slug){
 
+
+    $post = Post::where('slug',$slug)->first();
+return view('post')
+->with('post',$post)
+->with('title',Setting::first()->site_name)
+->with('Categorys',Category::Take(5)->get())
+->with('Settings',Setting::first());
+
+
+}
 
 }

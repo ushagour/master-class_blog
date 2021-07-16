@@ -16,13 +16,15 @@ use App\Post;
 */
 
 Route::get('/','FrontEndController@index');
-
-Auth::routes();
-
+ Route::get('/post/{slug}','FrontEndController@SinglePost')->name('post.single');
 
 
+
+
+
+ Auth::routes();
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
-
+    
 
 
     Route::get('/home', 'HomeController@index')->name('home');
