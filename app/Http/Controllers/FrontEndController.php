@@ -35,11 +35,18 @@ public function SinglePost($slug){
 
 
     $post = Post::where('slug',$slug)->first();
-return view('post')
-->with('post',$post)
-->with('title',Setting::first()->site_name)
-->with('Categorys',Category::Take(5)->get())
-->with('Settings',Setting::first());
+
+    $next_id = Post ::where('id','>',$post->id)->min('id');// hena khdiina id dyal les post li kber  men  curent  post t bazina 3ala min 
+    $prev_id = Post ::where('id','<',$post->id)->max('id');// hena khdiina id dyal les post li sgher  men  curent  post t bazina 3ala max 
+
+
+            return view('post')
+            ->with('post',$post)
+            ->with('title',Setting::first()->site_name)
+            ->with('Categorys',Category::Take(5)->get())
+            ->with('Settings',Setting::first())
+            ->with('next',Post::find($next_id))
+            ->with('previous',Post::find($prev_id));
 
 
 }

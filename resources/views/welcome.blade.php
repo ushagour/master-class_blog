@@ -193,7 +193,7 @@
                                     <h6 class="case-item__title"><a href="#">{{$post->title}}</a></h6>
                                 </div>
                             </div>
-
+                            
                         </div>
                     @endforeach
                     </div>

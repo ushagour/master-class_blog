@@ -15,7 +15,7 @@ use App\Post;
 |
 */
 
-Route::get('/','FrontEndController@index');
+ Route::get('/','FrontEndController@index');
  Route::get('/post/{slug}','FrontEndController@SinglePost')->name('post.single');
 
 
