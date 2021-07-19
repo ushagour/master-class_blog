@@ -19,14 +19,11 @@
                         </a>
                         <ul class="primary-menu-menu" style="overflow: hidden;">
                           
-                          @foreach($Categorys as $Category)
-                              
-   
-                          
+                          @foreach($Categorys as $Category)  
                             <li class="">
-                                <a href="">{{$Category->name}}</a>
+                                <a href="{{ route('category',['id'=> $Category->id]) }}">{{$Category->name}}</a>
                             </li>
-                                              @endforeach
+                         @endforeach
                         </ul>
                     </nav>
                     <ul class="nav-add">

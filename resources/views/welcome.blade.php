@@ -41,7 +41,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{$first_post->category->name}}</a>
+                                            <a href="{{ route('category',['id'=> $first_post->category->id]) }}">{{$first_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -95,7 +95,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#"> {{$second_post->category->name}}</a>
+                                            <a href="{{ route('category',['id'=> $second_post->category->id]) }}"> {{$second_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -145,7 +145,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{$therd_post->category->name}}</a>
+                                            <a href="{{ route('category',['id'=> $therd_post->category->id]) }}">{{$therd_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -190,7 +190,7 @@
                                     <div class="case-item__thumb">
                                         <img src="{{asset('/'. $post->featured)}}" alt="our case">
                                     </div>
-                                    <h6 class="case-item__title"><a href="#">{{$post->title}}</a></h6>
+                                    <h6 class="case-item__title"><a href="{{ route('post.single',['slug'=> $post->slug]) }}">{{$post->title}}</a></h6>
                                 </div>
                             </div>
                             
@@ -222,7 +222,7 @@
                 <div class="case-item__thumb">
                     <img src="{{asset('/'. $post->featured)}}" alt="our case">
                 </div>
-                <h6 class="case-item__title"><a href="#">{{$post->title}}</a></h6>
+                <h6 class="case-item__title"><a href="{{ route('post.single',['slug'=> $post->slug]) }}">{{$post->title}}</a></h6>
             </div>
         </div>
 

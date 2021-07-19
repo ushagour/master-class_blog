@@ -51,4 +51,18 @@ public function SinglePost($slug){
 
 }
 
+
+public function Category($id)
+{
+
+    return view('category')
+    ->with('category',Category::findOrFail($id))
+    ->with('Categorys',Category::Take(5)->get())
+    ->with('title',Setting::first()->site_name)
+    ->with('Settings',Setting::first());
+
+
+
+}
+
 }
