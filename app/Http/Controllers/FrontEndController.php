@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Setting;
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
@@ -45,6 +46,7 @@ public function SinglePost($slug){
             ->with('title',Setting::first()->site_name)
             ->with('Categorys',Category::Take(5)->get())
             ->with('Settings',Setting::first())
+            ->with('tags',Tag::all())
             ->with('next',Post::find($next_id))
             ->with('previous',Post::find($prev_id));
 
@@ -58,6 +60,20 @@ public function Category($id)
     return view('category')
     ->with('category',Category::findOrFail($id))
     ->with('Categorys',Category::Take(5)->get())
+    ->with('tags',Tag::all())
+    ->with('title',Setting::first()->site_name)
+    ->with('Settings',Setting::first());
+
+
+
+}
+public function Tag($id)
+{
+
+    return view('tag')
+    ->with('tag',Tag::findOrFail($id))
+    ->with('Categorys',Category::Take(5)->get())
+    ->with('tags',Tag::all())
     ->with('title',Setting::first()->site_name)
     ->with('Settings',Setting::first());
 

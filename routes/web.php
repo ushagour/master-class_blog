@@ -17,7 +17,8 @@ use App\Post;
 
  Route::get('/','FrontEndController@index');
  Route::get('/post/{slug}','FrontEndController@SinglePost')->name('post.single');
- Route::get('/category/{id}','FrontEndController@Category')->name('category');
+ Route::get('/category/{id}','FrontEndController@Category')->name('category.single');
+ Route::get('/tag/{id}','FrontEndController@Tag')->name('tag.single');
 
 
 
