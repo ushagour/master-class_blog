@@ -14,29 +14,23 @@ use App\Post;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// section frontend UI
  Route::get('/','FrontEndController@index');
  Route::get('/post/{slug}','FrontEndController@SinglePost')->name('post.single');
  Route::get('/category/{id}','FrontEndController@Category')->name('category.single');
  Route::get('/tag/{id}','FrontEndController@Tag')->name('tag.single');
-
-
  Route::get('/result','FrontEndController@Search')->name('tag.Search');
 
-
-
-
+//END section frontend UI
 
  Auth::routes();
+
+
+
+
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+     Route::get('/Dashboard', 'HomeController@index')->name('Dashboard');
     
-
-
-    Route::get('/home', 'HomeController@index')->name('home');
-    
-
-
-
     #region categries
     Route::get('/category', 'CategoriesController@index')->name('category.index');
     Route::get('/category/create', 'CategoriesController@create')->name('category.create');
@@ -59,11 +53,6 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/post/kill/{id}', 'PostController@kill')->name('post.kill');// restoring softdelete data 
 
     //end region post
-
-
-
-
-
     #region tags 
     Route::get('/tag', 'Tagscontroller@index')->name('tag.index');
     Route::get('/tag/create', 'Tagscontroller@create')->name('tag.create');
@@ -89,11 +78,11 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
     //end region users
 
-// region setting
-Route::get('/setting', 'SettingController@index')->name('setting.index');
-Route::post('/setting/update/{id}', 'SettingController@update')->name('setting.update');
+        // region setting
+        Route::get('/setting', 'SettingController@index')->name('setting.index');
+        Route::post('/setting/update/{id}', 'SettingController@update')->name('setting.update');
 
-//end region 
+        //end region 
 
 
 
