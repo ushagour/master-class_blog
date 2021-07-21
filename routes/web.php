@@ -21,6 +21,9 @@ use App\Post;
  Route::get('/tag/{id}','FrontEndController@Tag')->name('tag.single');
 
 
+ Route::get('/result','FrontEndController@Search')->name('tag.Search');
+
+
 
 
 

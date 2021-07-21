@@ -81,4 +81,21 @@ public function Tag($id)
 
 }
 
+
+
+        public function Search()
+        {
+
+         $posts =   Post:: where('title','like','%'.request('query').'%')->get();
+
+         return view('search')->with('query',request('query'))
+                              ->with('posts',$posts)
+                              ->with('Categorys',Category::Take(5)->get())
+                              ->with('Settings',Setting::first())
+    ->with('title',Setting::first()->site_name)
+
+                              ->with('tags',Tag::all());
+          
+
+        }
 }
