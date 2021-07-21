@@ -87,7 +87,6 @@ Session::flash('success','profile created successfuly');
 
 return redirect()->route('users.index');
     }
-
     /**
      * Display the specified resource.
      *

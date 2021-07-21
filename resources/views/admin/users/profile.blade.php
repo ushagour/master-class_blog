@@ -90,7 +90,7 @@
 
                             <div class="col-md-6">
 
-<textarea name="about" id="about" cols="40" rows="5" >{{  $user->about}} </textarea>
+<textarea name="about" id="about" cols="40" rows="5" >{{  $user->profile->about}} </textarea>
                             </div>
                         </div>
 

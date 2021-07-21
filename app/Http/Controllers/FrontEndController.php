@@ -92,10 +92,8 @@ public function Tag($id)
                               ->with('posts',$posts)
                               ->with('Categorys',Category::Take(5)->get())
                               ->with('Settings',Setting::first())
-    ->with('title',Setting::first()->site_name)
-
+                              ->with('title',Setting::first()->site_name)
                               ->with('tags',Tag::all());
-          
-
+        
         }
 }

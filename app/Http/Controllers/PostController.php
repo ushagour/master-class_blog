@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Category;
+use auth;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\UploodedFile; //classe pour utilser la methode store 
@@ -74,18 +76,18 @@ class PostController extends Controller
 
        }
 
-        $newpost = new Post;
-        $newpost->title = $request->title;
-        $newpost->featured = $path;
-        $newpost->content = $request->content;
-        $newpost->category_id = $request->category_id;
-        $newpost->slug = str::slug($request->title); // had function dyal helper str kadiir slug l text katredo ligne whda b "_"
-
+        $post = new Post;
+        $post->title = $request->title;
+        $post->featured = $path;
+        $post->content = $request->content;
+        $post->category_id = $request->category_id;
+        $post->slug = str::slug($request->title); // had function dyal helper str kadiir slug l text katredo ligne whda b "_"
+        $post->user_id  =Auth::id();
 
         
-        $newpost->save();
+        $post->save();
 
-        $newpost->tags()->attach($request->selectedtags);
+        $post->tags()->attach($request->selectedtags);
      Session::flash('message', 'post created succesfuly!'); 
      Session::flash('alert-class', 'alert-success'); 
      

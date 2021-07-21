@@ -10,7 +10,7 @@ class Post extends Model
     //
     use SoftDeletes;
     
-    protected $fillable=['title','content','category_id','featured','slug']; // pour presiser les chap a modifier leure dune upldate
+    protected $fillable=['title','content','category_id','featured','slug','user_id']; // pour presiser les chap a modifier leure dune upldate
     public function category()
     {
 
@@ -24,5 +24,9 @@ class Post extends Model
 
 
         return $this->belongsToMany(Tag::class);
+    }
+
+    public  function user(){
+        return $this->belongsTo(User::class);
     }
 }
