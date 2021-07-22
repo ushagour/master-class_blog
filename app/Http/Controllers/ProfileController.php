@@ -116,12 +116,12 @@ class ProfileController extends Controller
  $user->profile->youtube = $request->youtube;
  $user->profile->about = $request->about;
 
-
- if ($request->has('newpassword')) {
+//hena derna filled bach ntestiw wach input kayn f request w not empty 
+ if ($request->filled('newpassword')) {
 
 $NewPassword = Hash::make($request->newpassword);
 
- $user->password = $NewPassword; //Todo hta nkml had editing 
+ $user->password = $NewPassword; 
 $user->save();
  }
 
