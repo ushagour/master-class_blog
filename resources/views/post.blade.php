@@ -66,7 +66,7 @@
 
 
                                 @foreach($post->tags as $tag)
-                                    <a href="#" class="w-tags-item">{{$tag->name}}</a>
+                                    <a href="#" class="w-tags-item">{{$tag->tag}}</a>
                                 @endforeach
                                 </div>
                             </div>
@@ -75,8 +75,8 @@
                     </div>
 
                     <div class="socials text-center">Share:
-                      <div class="addthis_inline_share_toolbox_gjor"></div>
-                    </div>
+                    <div class="addthis_inline_share_toolbox"></div>
+                                        </div>
 
                 </article>
 

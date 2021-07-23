@@ -156,25 +156,10 @@
 <script src="{{asset('app/js/animation.velocity.min.js')}}"></script>
 <script id="dsq-count-scr" src="//masterblog-1.disqus.com/count.js" async></script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60f86c3d0a451023"></script>
-
-
 <!-- ...end JS Script -->
 
 </body>
 </html>
 
 
-{{-- 
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif --}}
