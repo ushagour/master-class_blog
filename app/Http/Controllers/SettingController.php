@@ -40,7 +40,12 @@ class SettingController extends Controller
             'site_name' => 'required|max:20',
             'contact_number' => 'required|max:25',
             'contact_email' => 'required|email',
-            'address' => 'required|'
+            'address' => 'required|',
+            'about' => 'required|',
+            'jourheureOfappel' => 'required|',
+            'adresse2' => 'required|',
+            'City' => 'required|',
+            'country' => 'required|'
           
         ]);
 
@@ -51,6 +56,11 @@ class SettingController extends Controller
         $setting->contact_number=$request->contact_number;
         $setting->contact_email=$request->contact_email;
         $setting->address=$request->address;
+        $setting->about=$request->about;
+        $setting->jourheureOfappel=$request->jourheureOfappel;
+        $setting->adresse2=$request->adresse2;
+        $setting->City=$request->City;
+        $setting->country=$request->country;
 
 
 

@@ -58,6 +58,51 @@
 
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="adresse2" class="col-md-4 col-form-label text-md-right">adresse2</label>
+
+                            <div class="col-md-6">
+                                <input id="adresse2" type="text" class="form-control @error('adresse2') is-invalid @enderror" 
+                                name="adresse2"  autocomplete="adresse2" value="{{  $setting->adresse2}}">
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="country" class="col-md-4 col-form-label text-md-right">country</label>
+
+                            <div class="col-md-6">
+                                <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" 
+                                name="country"  autocomplete="country" value="{{  $setting->country}}">
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="City" class="col-md-4 col-form-label text-md-right">City</label>
+
+                            <div class="col-md-6">
+                                <input id="City" type="text" class="form-control @error('City') is-invalid @enderror" 
+                                name="City"  autocomplete="City" value="{{  $setting->City}}">
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="about" class="col-md-4 col-form-label text-md-right">about</label>
+
+                            <div class="col-md-6">
+
+                                <textarea name="about" id="about" cols="30" rows="10"> {{  $setting->about}}</textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="jourheureOfappel" class="col-md-4 col-form-label text-md-right">jourheureOfappel</label>
+
+                            <div class="col-md-6">
+                                <input id="jourheureOfappel" type="text" class="form-control @error('jourheureOfappel') is-invalid @enderror" 
+                                name="jourheureOfappel"  autocomplete="jourheureOfappel" value="{{  $setting->jourheureOfappel}}">
+
+                            </div>
+                        </div>
 
      
 
