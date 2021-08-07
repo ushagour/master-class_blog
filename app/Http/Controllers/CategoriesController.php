@@ -50,8 +50,8 @@ class CategoriesController extends Controller
 
 
         # session  fiiha message avec class bootstrap pour le style d'allert 
-        Session::flash('message', 'category created succesfuly!'); 
-        Session::flash('alert-class', 'alert-success'); 
+        Session::flash('toaster-message', 'category created succesfuly!'); 
+        Session::flash('toaster-class', 'success'); 
         
         return redirect()->back();
         
@@ -71,7 +71,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+ //
     }
 
     /**
@@ -103,8 +103,8 @@ class CategoriesController extends Controller
         $category=Category::find($id);
         $category->name=$request->name;
         $category->save();
-        Session::flash('message', 'category updated succesfuly!'); 
-        Session::flash('alert-class', 'alert-success'); 
+        Session::flash('toaster-message', 'category updated succesfuly!'); 
+        Session::flash('toaster-class', 'info'); 
         
           return redirect()->route('category.index');
    
@@ -123,8 +123,8 @@ class CategoriesController extends Controller
         $category=Category::find($id);
 
         $category->delete();
-        Session::flash('message', 'category deleded defunetly!'); 
-        Session::flash('alert-class', 'alert-danger'); 
+        Session::flash('toaster-message', 'category deleded defunetly!'); 
+        Session::flash('toaster-class', 'error'); 
         return redirect()->back();
 
     }

@@ -128,8 +128,8 @@ $user->save();
 
  $user->save();
  $user->profile->save();
- Session::flash('info', 'profile updated succesfuly!'); 
- Session::flash('alert-class', 'alert-success'); 
+ Session::flash('toaster-message', 'profile updated succesfuly!'); 
+ Session::flash('atoaster-class', 'success'); 
  
      return redirect()->back();
         

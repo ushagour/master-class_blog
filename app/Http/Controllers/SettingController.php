@@ -71,8 +71,8 @@ class SettingController extends Controller
 
 
         $setting->save();
-        Session::flash('info', 'setting updated succesfuly!'); 
-        Session::flash('alert-class', 'alert-success'); 
+        Session::flash('toaster-message', 'setting updated succesfuly!'); 
+        Session::flash('toaster-class', 'success'); 
         
           return redirect()->route('setting.index');
    

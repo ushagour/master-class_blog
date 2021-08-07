@@ -8,10 +8,7 @@
   </div>
   <div class="card-body">
   
-@if(Session::has('message'))
-        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 
-@endif
   <table class="table table-striped table-inverse ">
     <thead class="thead-inverse">
         <tr>

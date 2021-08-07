@@ -19,9 +19,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- toastr -->
+
+  <script src="{{ asset('js/toastr.js') }}"></script>  
+    <link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
         
-        
-        
+    
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
+
+
         @yield('style')
 
  
@@ -165,7 +173,13 @@
     </div>
 
 
-        @yield('scrypts')
+    <script>
 
+@if(Session::has('toaster-message'))
+toastr.{{ Session::get('toaster-class') }}("{{ Session::get('toaster-message') }}");
+
+@endif
+</script>
+        @yield('scrypts')
 </body>
 </html>

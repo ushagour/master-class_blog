@@ -53,8 +53,8 @@ class Tagscontroller extends Controller
         $tag = new Tag;
         $tag->tag = $request->tag;
         $tag->save();
-        Session::flash('message', 'tag created succesfuly!'); 
-        Session::flash('alert-class', 'alert-success'); 
+        Session::flash('toaster-message', 'tag created succesfuly!'); 
+        Session::flash('toaster-class', 'success'); 
         return redirect()->back();
         
     }
@@ -96,8 +96,8 @@ class Tagscontroller extends Controller
         $tag=Tag::find($id);
         $tag->tag=$request->tag;
         $tag->save();
-        Session::flash('message', 'tag updated succesfuly!'); 
-        Session::flash('alert-class', 'alert-success'); 
+        Session::flash('toaster-message', 'tag updated succesfuly!'); 
+        Session::flash('toaster-class', 'info'); 
         
           return redirect()->route('tag.index');
    
@@ -115,8 +115,8 @@ class Tagscontroller extends Controller
         $tag=Tag::find($id);
 
         $tag->delete();
-        Session::flash('message', 'tag deleded defunetly!'); 
-        Session::flash('alert-class', 'alert-danger'); 
+        Session::flash('toaster-message', 'tag deleded defunetly!'); 
+        Session::flash('toaster-class', 'error'); 
         return redirect()->back();
 
     }

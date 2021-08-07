@@ -5,10 +5,7 @@
 
 <h3>Tags !</h3>
   
-@if(Session::has('message'))
-        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 
-@endif
   </div>
   <div class="card-body">
   <table class="table">

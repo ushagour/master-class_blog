@@ -3,10 +3,7 @@
 
 <div class="card card-default">
     <div class="card-header">
-@if(Session::has('info'))
-        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('info') }}</p>
 
-@endif
     </div>
     <div class="card-body">
     @if(count($errors)>0)

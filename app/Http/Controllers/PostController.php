@@ -41,7 +41,8 @@ class PostController extends Controller
             if ($categories->count() ==0 || $tags->count() ==0) {
 
 // had condition matkhliich user y cree post ila makanch tags w category 
-            Session::flash('message','you must have categories  before crateing new post');
+            Session::flash('toaster-message','you must have categories  before crateing new post');
+            Session::flash('toaster-class','info');
              return redirect()->back();
             }
 
@@ -87,8 +88,8 @@ class PostController extends Controller
         $post->save();
 
         $post->tags()->attach($request->selectedtags);
-     Session::flash('message', 'post created succesfuly!'); 
-     Session::flash('alert-class', 'alert-success'); 
+     Session::flash('toaster-message', 'post created succesfuly!'); 
+     Session::flash('toaster-class', 'success'); 
      
        return redirect()->back();
 
@@ -151,8 +152,8 @@ class PostController extends Controller
        $post->save();
 
        $post->tags()->sync($request->selectedtags); // methode sync bnch t3yt 3la attach methode li ka associer post b tag 
-       Session::flash('message', 'post updated succesfuly!'); 
-       Session::flash('alert-class', 'alert-success'); 
+       Session::flash('toaster-message', 'post updated succesfuly!'); 
+       Session::flash('toaster-class', 'info'); 
        
          return redirect()->route('post.index');
   
@@ -171,8 +172,8 @@ class PostController extends Controller
         $post = Post::find($id);
 
         $post->delete();
-     Session::flash('message', 'post deleded succesfuly!'); 
-     Session::flash('alert-class', 'alert-danger'); 
+     Session::flash('toaster-message', 'post deleded succesfuly!'); 
+     Session::flash('toaster-class', 'error'); 
      
 
         return redirect()->back();
@@ -197,8 +198,8 @@ class PostController extends Controller
         $post = Post::withTrashed()->where('id',$id)->first();
 
         $post->restore();
-     Session::flash('message', 'post restored succesfuly!'); 
-     Session::flash('alert-class', 'alert-success'); 
+     Session::flash('toaster-message', 'post restored succesfuly!'); 
+     Session::flash('toaster-class', 'success'); 
      
 
         return redirect()->back();
@@ -211,9 +212,8 @@ class PostController extends Controller
 
 
         $post->forceDelete();
-       Session::flash('message', 'post deleded defunetly!'); 
-       Session::flash('alert-class', 'alert-danger'); 
-     
+       Session::flash('toaster-message', 'post deleded defunetly!'); 
+       Session::flash('toaster-class', 'success');      
 
         return redirect()->back();
     }
