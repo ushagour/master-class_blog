@@ -1,14 +1,57 @@
 
-## About PROJECT 
-
 master-class is a web bloge crated by me using laravel frameworek 7 .
 
 
-## Clone your project.
-- Go to the folder application using cd command on your cmd or terminal.
-- Run composer install on your cmd or terminal.
-- Copy .env.example file to .env on the root folder. ...
-- Open your . ...
-- Run php artisan key:generate.
-- Run php artisan migrate.
-- Run php artisan serve.
+# Git
+
+### clone l project men github
+
+```
+git clone url of rep
+```
+# composer
+
+### install package 
+
+```
+Run composer install
+```
+
+
+# laravel
+```
+ php artisan key:generate.
+```
+
+
+
+# Database
+
+### Kifach ndir bach n3amar db btables ?
+```
+php artisan migrate
+```
+
+### Kifach ndir ila tra liya error f migration ?
+```
+php artisan migrate:fresh
+```
+
+### Kifach ndir bach ndekhel users dyal test ?
+```
+php artisan db:seed --class=UsersSeeder
+```
+
+# Migrations
+### drop constrainte colums
+
+```php
+    public function down()
+    {
+        Schema::table('categories', function (Blueprint $table) {
+            $table->dropForeign("categories_type_id_foreign");
+            $table->dropColumn("type_id");
+        });
+    }
+```
+
