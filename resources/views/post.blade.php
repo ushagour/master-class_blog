@@ -194,3 +194,10 @@
     </div>
 </div>
 @endsection
+
+@section('more_script')
+
+<script id="dsq-count-scr" src="//masterblog-1.disqus.com/count.js" async></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60f86c3d0a451023"></script>
+
+@endsection
