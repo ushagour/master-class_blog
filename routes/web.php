@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Tag;
 use App\Category;
 use App\Post;
+use Tzsk\Otp\Facades\Otp;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,7 @@ use App\Post;
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
      Route::get('/Dashboard', 'HomeController@index')->name('Dashboard');
+     Route::get('/SendMail', 'HomeController@SendMail')->name('SendMail');
     
     #region categries
     Route::get('/category', 'CategoriesController@index')->name('category.index');
@@ -100,4 +102,16 @@ Route::get('/test', function(){
  
 return App\User::find(1)->profile->avatar;  //  bghiina nchpofo les tag associer lwahd post by id dyaloo
 
+});
+
+
+
+Route::get('/testotp',function(){
+
+    $otp = Otp::generate(md5("ali"));
+
+    $valid = Otp::match($otp, md5("ali"));
+
+
+echo $valid;
 });
