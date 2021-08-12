@@ -23,7 +23,7 @@ class PostController extends Controller
     {
         //
         $posts = Post::all();
-        return view('admin.posts.index')->with('posts',$posts);
+        return view('back-office.posts.index')->with('posts',$posts);
     }
 
     /**
@@ -47,7 +47,7 @@ class PostController extends Controller
             }
 
 
-        return view('admin.posts.create')->with('categories',$categories)// had with hiiya li katsiiift liina array dyal les categories m3a had view
+        return view('back-office.posts.create')->with('categories',$categories)// had with hiiya li katsiiift liina array dyal les categories m3a had view
                                          ->with('tags',Tag::all());
     }
 
@@ -114,7 +114,7 @@ class PostController extends Controller
     {
         //
           $post =Post::find($id);
-          return view('admin.posts.edit')->with('post',$post)
+          return view('back-office.posts.edit')->with('post',$post)
                                          ->with('categories',Category::all())
                                          ->with('tags',Tag::all());       
     }
@@ -183,7 +183,7 @@ class PostController extends Controller
     {
         // geting trashed data 
         $posts = Post::onlyTrashed()->get();
-        return view('admin.posts.trashed')->with('posts',$posts);
+        return view('back-office.posts.trashed')->with('posts',$posts);
     }
 
 

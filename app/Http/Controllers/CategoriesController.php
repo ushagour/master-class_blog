@@ -19,7 +19,7 @@ class CategoriesController extends Controller
         $categories = Category::all();
         
 
-        return view('admin.categories.index',["categories"=>$categories]);
+        return view('back-office.categories.index',["categories"=>$categories]);
     }
 
     /**
@@ -30,7 +30,7 @@ class CategoriesController extends Controller
     public function create()
     {
         //
-        return view('admin.categories.create');
+        return view('back-office.categories.create');
     }
 
     /**
@@ -85,7 +85,7 @@ class CategoriesController extends Controller
         //
 
         $category =Category::find($id);
-        return view('admin.categories.edit',["category"=>$category]);
+        return view('back-office.categories.edit',["category"=>$category]);
     }
 
     /**

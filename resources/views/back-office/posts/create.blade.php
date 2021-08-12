@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
    @section('style')
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     @stop

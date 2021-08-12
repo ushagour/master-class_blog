@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard')
+        return view('back-office.dashboard')
         ->with('count_posts',Post::all()->count())
         ->with('count_trashed_posts',Post::onlyTrashed()->get()->count())//hena derna get hiit only trashed methode dyal query builder 
         ->with('count_categories',Category::all()->count())

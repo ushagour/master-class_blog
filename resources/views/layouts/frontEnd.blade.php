@@ -42,7 +42,7 @@
 
 <div class="content-wrapper">
     
-@include('globals.header')
+@include('front-office.globals.header')
 
 
 @yield('content')
@@ -84,7 +84,7 @@
 
 <!-- Footer -->
 
-@include('globals.footer')
+@include('front-office.globals.footer')
 <!-- End Footer -->
 
 <svg style="display:none;">

@@ -154,7 +154,7 @@
                     </div>
 
 
-                    @include('globals.disqus')
+                    @include('front-office.globals.disqus')
                 </div>
 
                 <div class="row">

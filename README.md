@@ -1,5 +1,11 @@
 
 master-class is a web bloge crated by me using laravel frameworek 7 .
+   ===> Back-office
+views admin + auth +
+
+
+
+
 
 
 # Git

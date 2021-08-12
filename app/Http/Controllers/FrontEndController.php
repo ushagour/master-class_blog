@@ -13,7 +13,7 @@ class FrontEndController extends Controller
     //
  public function index()
  {
-     return view('welcome')
+     return view('front-office.welcome')
      ->with('title',Setting::first()->site_name)
      ->with('Categorys',Category::Take(5)->get())// take query builder methode 
      ->with('first_post',Post::orderBy('created_at','desc')->first())// first post the last created akhiir wahd t crea 
@@ -41,7 +41,7 @@ public function SinglePost($slug){
     $prev_id = Post ::where('id','<',$post->id)->max('id');// hena khdiina id dyal les post li sgher  men  curent  post t bazina 3ala max 
 
 
-            return view('post')
+            return view('front-office.singlePost')
             ->with('post',$post)
             ->with('title',Setting::first()->site_name)
             ->with('Categorys',Category::Take(5)->get())
@@ -57,7 +57,7 @@ public function SinglePost($slug){
 public function Category($id)
 {
 
-    return view('category')
+    return view('front-office.category')
     ->with('category',Category::findOrFail($id))
     ->with('Categorys',Category::Take(5)->get())
     ->with('tags',Tag::all())
@@ -70,7 +70,7 @@ public function Category($id)
 public function Tag($id)
 {
 
-    return view('tag')
+    return view('front-office.tag')
     ->with('tag',Tag::findOrFail($id))
     ->with('Categorys',Category::Take(5)->get())
     ->with('tags',Tag::all())
@@ -88,7 +88,7 @@ public function Tag($id)
 
          $posts =   Post:: where('title','like','%'.request('query').'%')->get();
 
-         return view('search')->with('query',request('query'))
+         return view('front-office.search')->with('query',request('query'))
                               ->with('posts',$posts)
                               ->with('Categorys',Category::Take(5)->get())
                               ->with('Settings',Setting::first())

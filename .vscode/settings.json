@@ -25,7 +25,7 @@
 		//files in folders
 		"**/app/Console" : true,
 		"**/app/Exceptions" : true,
-		"**/app/Providers" : true,
+		// "**/app/Providers" : true,
 		"**/bootstrap" : true,
 		// "**/config" : true,
 

@@ -25,7 +25,7 @@ class Tagscontroller extends Controller
 
          $tags=Tag::all();
 
-        return view('admin.tags.index')->with('tags',$tags);
+        return view('back-office.tags.index')->with('tags',$tags);
     }
 
     /**
@@ -36,7 +36,7 @@ class Tagscontroller extends Controller
     public function create()
     {
         //
-        return view('admin.tags.create');
+        return view('back-office.tags.create');
 
     }
 
@@ -80,7 +80,7 @@ class Tagscontroller extends Controller
     {
         //
         $tag =Tag::find($id);
-        return view('admin.tags.edit',["tag"=>$tag]);
+        return view('back-office.tags.edit',["tag"=>$tag]);
     }
 
     /**

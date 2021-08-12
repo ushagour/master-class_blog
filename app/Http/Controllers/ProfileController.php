@@ -27,7 +27,7 @@ class ProfileController extends Controller
         // echo'<pre>';
         $userId = Auth::id()        ;
     // return (User::find($userId)->profile->avatar);
-      return view('admin.users.profile')->with("user", User::find($userId));  //Auth::user();
+      return view('back-office.users.profile')->with("user", User::find($userId));  //Auth::user();
     }
 
     /**

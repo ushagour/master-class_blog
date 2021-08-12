@@ -16,7 +16,7 @@ class SettingController extends Controller
         $setting = Setting::first();
         // dd($setting);
             // $setting->site_name;
-        return view('admin.settings.index',["setting"=>$setting]);  // nb  vartiable $ setting de type object w view kansifto liha ghiir string donc khassna nsiifto se forme dun tableaux
+        return view('back-office.settings.index',["setting"=>$setting]);  // nb  vartiable $ setting de type object w view kansifto liha ghiir string donc khassna nsiifto se forme dun tableaux
     
     }
 

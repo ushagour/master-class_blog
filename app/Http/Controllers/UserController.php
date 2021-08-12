@@ -36,7 +36,7 @@ $this->middleware('Admin'); // all function in this controller willle be use Adm
     {
         //
         $users = User::all();
-        return view('admin.users.index')->with('users',$users);
+        return view('back-office.users.index')->with('users',$users);
         
     }
 
@@ -48,7 +48,7 @@ $this->middleware('Admin'); // all function in this controller willle be use Adm
     public function create()
     {
         //
-        return view('admin.users.create');
+        return view('back-office.users.create');
     }
 
     /**
