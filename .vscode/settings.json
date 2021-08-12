@@ -9,7 +9,7 @@
 		"composer.json": true,
 		"composer.lock": true,
 		"phpunit.xml": true,
-		"README.md" : true,
+		// "README.md" : true,
 		"webpack.mix.js" : true,
 		"artisan" : true,
 		"server.php" : true,
