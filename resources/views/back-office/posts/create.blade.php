@@ -57,15 +57,15 @@
 <label for="tags">select Tags</label>
 
 
-
+<div class="row">
+<div class="col">
 @foreach($tags as $tag)
-<div class="checkbox">
 
 
  <label for="tag"><input type="checkbox"  name="selectedtags[]" value="{{$tag->id}}" id="tag"> {{$tag->tag}}</label>
-</div>
 @endforeach
 
+</div>
 </div>
 
             <div class="form-group">

@@ -56,27 +56,35 @@
 
 
 
+                <div class="row">
+<div class="col">
                          @foreach($tags as $tag) <!-- had loop1 bach naffichiw ga3 les tags li kaynin   -->
                  
-                <div class="checkbox">
 
 
-                    <label for="tag">
-<!--  had loop 2 bach  nchoofo les tag li f table pivo  -->
-<!--   had if blow wach id dyal tag li f table pivo === id li f table tags -->
-                        <input type="checkbox" name="selectedtags[]" value="{{$tag->id}}" id="tag"
-                         @foreach($post->tags as $t) 
 
-                                   @if($tag->id == $t->id) 
-                                                               checked
-                                   @endif
-                        @endforeach
 
-                        > {{$tag->tag}}</label>
+    <label for="tag">
+    <!--  had loop 2 bach  nchoofo les tag li f table pivo  -->
+    <!--   had if blow wach id dyal tag li f table pivo === id li f table tags -->
+    
+    
+    
+                            <input type="checkbox" name="selectedtags[]" value="{{$tag->id}}" id="tag"
+                             @foreach($post->tags as $t) 
+    
+                                       @if($tag->id == $t->id) 
+                                                                   checked
+                                       @endif
+                            @endforeach
+    
+                            > {{$tag->tag}}</label>
 
-                </div>
-                    @endforeach
+                            @endforeach
+                        </div>
+                        &nbsp;
 
+</div>
             </div>
             <div class="form-group">
 
