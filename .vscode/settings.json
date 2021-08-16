@@ -19,7 +19,7 @@
 		"**/vendor" : true,
 		"**/tests" : true,
 		// "**/database" : true,
-		"**/database/factories" : true,
+		// "**/database/factories" : true,
 		// "**/storage" : true,
 
 		//files in folders

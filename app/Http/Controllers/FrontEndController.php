@@ -19,8 +19,8 @@ class FrontEndController extends Controller
      ->with('first_post',Post::orderBy('created_at','desc')->first())// first post the last created akhiir wahd t crea 
      ->with('second_post',Post::orderBy('created_at','desc')->skip(1)->take(1)->get()->first())
      ->with('therd_post',Post::orderBy('created_at','desc')->skip(2)->take(1)->get()->first())
-     ->with('Food',Category::find(6))
-     ->with('Music',Category::find(7))
+     ->with('Category1',Category::find(1))
+     ->with('Category2',Category::find(2))
      ->with('Settings',Setting::first());
 
      /*
