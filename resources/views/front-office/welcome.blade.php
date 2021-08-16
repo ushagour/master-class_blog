@@ -171,7 +171,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                             <div class="heading">
-                                <h4 class="h1 heading-title">{{$Food->name}}</h4>
+                                <h4 class="h1 heading-title">{{$Category1->name}}</h4>
                                 <div class="heading-line">
                                     <span class="short-line"></span>
                                     <span class="long-line"></span>
@@ -182,7 +182,7 @@
                     <div class="row">
 
 
-                    @foreach($Food->posts()->orderBy('created_at','desc')->take(3)->get() as $post)
+                    @foreach($Category1->posts()->orderBy('created_at','desc')->take(3)->get() as $post)
                         
                         <div class="case-item-wrap">
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -203,7 +203,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                             <div class="heading">
-                                <h4 class="h1 heading-title">{{$Music->name}}</h4>
+                                <h4 class="h1 heading-title">{{$Category2->name}}</h4>
                                 <div class="heading-line">
                                     <span class="short-line"></span>
                                     <span class="long-line"></span>
@@ -214,7 +214,7 @@
                     <div class="row">
 
 
-@foreach($Music->posts()->orderBy('created_at','desc')->take(3)->get() as $post)
+@foreach($Category2->posts()->orderBy('created_at','desc')->take(3)->get() as $post)
     
     <div class="case-item-wrap">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
