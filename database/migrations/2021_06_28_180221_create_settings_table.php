@@ -19,6 +19,11 @@ class CreateSettingsTable extends Migration
             $table->string('contact_number')->nullable();
             $table->string('contact_email')->nullable();
             $table->string('address')->nullable();
+            $table->string('about')->nullable();
+            $table->string('jourheureOfappel')->nullable();
+            $table->string('adresse2')->nullable();
+            $table->string('City')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +35,6 @@ class CreateSettingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sittings');
+        Schema::dropIfExists('settings');
     }
 }

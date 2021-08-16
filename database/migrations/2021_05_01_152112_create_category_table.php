@@ -16,6 +16,7 @@ class CreateCategoryTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->boolean('is_actve')->default(0); //had champ bach nfr9oo les category li actife men li desactife dyal menu
             $table->timestamps();
             $table->softDeletes();
 
