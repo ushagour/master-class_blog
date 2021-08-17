@@ -50,11 +50,23 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        if (isset($data['username'])) {
+            $data['username'] = trim(strtolower($data['username']));
+            //We  use trim to remove the spaces from the begging and end of the username and email field
+            //and convert it to lowercase, before saving it to database
+        }
+    
+        if (isset($data['email'])) {
+            $data['email'] = trim(strtolower($data['email']));
+        }
+    
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:40', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+
     }
 
     /**
@@ -68,6 +80,7 @@ class RegisterController extends Controller
         $user=User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'username' => trim(strtolower($data['username'])),
             'password' => Hash::make($data['password']),
         ]);
         $profile = Profile::create([
