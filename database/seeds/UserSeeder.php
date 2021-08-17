@@ -17,8 +17,9 @@ class UserSeeder extends Seeder
         // seeder create random user
         // methode crete dyal class user pour cree un nouveau utilisteur! 
         $user=  App\User::create([ 
-        'name' => Str::random(10),
-        'email' => Str::random(10).'@gmail.com',
+        'name' => 'admin',
+        'username' => 'admin',
+        'email' => 'admin@gmail.com',
         'password' => Hash::make('password'), //remember the password is passowrd by defult 
         'is_admin'  =>1
       ]);
@@ -31,7 +32,7 @@ class UserSeeder extends Seeder
         //     'is_admin'  =>1
         // ]);
         DB::table('profiles')->insert([
-            'avatar' => 'storage/defult_user.png',
+            'avatar' => 'avatars/defult_user.png',
             'about' =>  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, dignissimos quisquam molestiae consequuntur dicta eveniet voluptate incidunt quo ullam cupiditate, odit natus ducimus ad, aut totam deserunt illum repellendus? Quidem.',
             'facebook' => 'page facebook',
             'youtube' => 'chaine youtube',
