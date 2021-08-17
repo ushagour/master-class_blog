@@ -64,6 +64,7 @@ $this->middleware('Admin'); // all function in this controller willle be use Adm
         $valition = $request->validate([
             'name' => 'required|max:255',//|unique:posts y3nii ykoon 1
             'email' => 'required|email|unique:users',
+            'username' => 'required|max:20|unique:users',
 
         ]);
 
@@ -71,6 +72,7 @@ $this->middleware('Admin'); // all function in this controller willle be use Adm
         #hena khdmna b methode create bach nrecuperi les info dyal user li t creia bhal id li ghankhdm biih blow
 $user =  User::create([
     "name" => $request->name,
+    "username" => $request->username,
     'email' => $request->email,
     'password' =>  Hash::make('password'),
 ]);
