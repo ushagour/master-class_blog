@@ -45,7 +45,7 @@
             <td> 
             
             @if(Auth::id() !== $user->id )
-            <a href="{{route('user.destroy',['id'=>$user->id])}}" class="btn btn-xs btn-danger">delete</a>
+            <a href="{{route('user.destroy',['id'=>$user->id])}}" class="btn btn-xs btn-danger"><i class="fas fa-trash"></i></a>
             @endif
             
             </td>   

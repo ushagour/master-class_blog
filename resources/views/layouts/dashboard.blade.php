@@ -29,7 +29,9 @@
  
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
 
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
+<script src="https://kit.fontawesome.com/8aec3381bb.js" crossorigin="anonymous"></script>
         @yield('style')
 
  

@@ -15,8 +15,8 @@
     @foreach($categories as $category)
         <tr>
             <td> {{$category->name}}</td>   
-            <td> <a href="{{route('category.edit',['id'=>$category->id])}}" class="btn btn-xs btn-info">edit</a> </td>   
-            <td> <a href="{{route('category.destroy',['id'=>$category->id])}}" class="btn btn-xs btn-danger">delete</a></td>   
+            <td> <a href="{{route('category.edit',['id'=>$category->id])}}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a> </td>   
+            <td> <a href="{{route('category.destroy',['id'=>$category->id])}}" class="btn btn-xs btn-danger"><i class="fas fa-trash"></i></a></td>   
         </tr>
      @endforeach
 
