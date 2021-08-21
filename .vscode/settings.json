@@ -13,7 +13,7 @@
 		"webpack.mix.js" : true,
 		"artisan" : true,
 		"server.php" : true,
-		".env.example" : true,
+		// ".env.example" : true,
 
 		//folders
 		"**/vendor" : true,
