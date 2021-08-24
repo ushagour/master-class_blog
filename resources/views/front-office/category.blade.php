@@ -16,9 +16,10 @@
         <main class="main">
             
             <div class="row">
-                        <div class="case-item-wrap">
-
+                
+                <div class="case-item-wrap" id="flex">
                         @foreach($category->posts as $post)
+                        
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                 <div class="case-item">
                                     <div class="case-item__thumb">
@@ -28,7 +29,7 @@
                                 </div>
                             </div>
 
-@endforeach
+                        @endforeach
                         </div>
             </div>
 

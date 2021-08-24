@@ -33,6 +33,15 @@
         .text-center{
             text-align: center;
         }
+        
+        #flex {
+  display: flex;
+  flex-flow: row wrap;
+  width: auto;
+}
+.case-item {
+  width: auto;
+}
     </style>
 
 </head>
