@@ -50,7 +50,7 @@
                         </div>
                         <div class="content">
                             <a href="#" class="title"><small>{{ $Settings->address }}</small></a>
-                            <p class="sub-title">{{ $Settings->adresse2 }}</p>
+                            <p class="sub-title">{{ $Settings->City ." ". $Settings->country  }}</p>
                         </div>
                     </div>
                 </div>
