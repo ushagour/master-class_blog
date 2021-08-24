@@ -83,7 +83,7 @@
                 <div class="blog-details-author">
 
                     <div class="blog-details-author-thumb">
-                        <img src="{{asset($post->user->profile->avatar)}}" alt="Author">
+                        <img src="{{asset($post->user->profile->avatar)}}" width="100px" height="110px"  alt="Author">
                     </div>
 
                     <div class="blog-details-author-content">
@@ -119,26 +119,32 @@
 
   <!-- first checking if previous post exsiste before display button -->
   @if($previous) 
-                    <a href="{{route('post.single',['slug'=>$previous->slug])}}" class="btn-next-wrap">
+  <a href="{{route('post.single',['slug'=>$previous->slug])}}" class="btn-next-wrap">
                         <div class="btn-content">
                             <div class="btn-content-title">next Post</div>
-                            <p class="btn-content-subtitle">{{$previous->title}}</p>
+                            <!-- <p class="btn-content-subtitle">{{$previous->title}}</p> -->
                         </div>
                         <svg class="btn-next">
                             <use xlink:href="#arrow-right"></use> 
                         </svg>
                     </a>
+
+
+           
             @endif
+
             @if($next) 
-                    <a href="{{route('post.single',['slug'=>$next->slug])}}" class="btn-prev-wrap">
+            <a href="{{route('post.single',['slug'=>$next->slug])}}" class="btn-prev-wrap" alt="{{$next->title}}">
                         <svg class="btn-prev">
                             <use xlink:href="#arrow-left"></use>
                         </svg>
                         <div class="btn-content">
                             <div class="btn-content-title">privous Post</div>
-                            <p class="btn-content-subtitle">{{$next->title}}</p>
+                            <!-- <p class="btn-content-subtitle"></p> -->
                         </div>
                     </a>
+
+        
             @endif
    
                 </div>
