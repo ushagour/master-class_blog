@@ -135,8 +135,9 @@ return redirect()->route('users.index');
                 $user =User::find($id);
                 $user->profile->delete();
                 $user->delete();
-                Session::flush('info','user deleted succesfuly ');
-                 return   redirect()->back();
+           //  return   Session::flush('info','user deleted succesfuly ');
+                //  return   redirect()->back();
+
  }
 
     /**

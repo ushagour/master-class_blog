@@ -16,7 +16,7 @@ use Tzsk\Otp\Facades\Otp;
 |
 */
 // section frontend UI
- Route::get('/','FrontEndController@index');
+ Route::get('/','FrontEndController@index')->name('home');
  Route::get('/post/{slug}','FrontEndController@SinglePost')->name('post.single');
  Route::get('/category/{id}','FrontEndController@Category')->name('category.single');
  Route::get('/tag/{id}','FrontEndController@Tag')->name('tag.single');
@@ -80,7 +80,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
     //end region users
 
-        // region setting
+        // region setting 
         Route::get('/setting', 'SettingController@index')->name('setting.index');
         Route::post('/setting/update/{id}', 'SettingController@update')->name('setting.update');
 

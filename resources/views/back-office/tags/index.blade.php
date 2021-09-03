@@ -16,8 +16,8 @@
     @foreach($tags as $tag)
         <tr>
             <td>    {{$tag->tag}}</td>   
-            <td> <a href="{{route('tag.edit',['id'=>$tag->id])}}" class="btn btn-xs btn-info">edit</a> </td>   
-            <td> <a href="{{route('tag.destroy',['id'=>$tag->id])}}" class="btn btn-xs btn-danger">delete</a></td>   
+            <td> <a href="{{route('tag.edit',['id'=>$tag->id])}}" class="btn btn-xs btn-info"><i class="fas fa-edit"></i></a> </td>   
+            <td> <a href="{{route('tag.destroy',['id'=>$tag->id])}}" class="btn btn-xs btn-danger"><i class="fas fa-trash"></i></a></td>   
         </tr>
      @endforeach
 

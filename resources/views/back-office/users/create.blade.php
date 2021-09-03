@@ -31,6 +31,13 @@
             </div>
             <div class="form-group">
 
+                <label for="username">UserName</label>
+
+                <input type="text" class="form-control" name="username" id="username">
+            </div>
+ 
+            <div class="form-group">
+
                 <label for="name">Email</label>
 
                 <input type="text" class="form-control" name="email" id="email">
