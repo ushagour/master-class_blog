@@ -83,13 +83,11 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="about" class="col-md-4 col-form-label text-md-right">about</label>
+                            <label for="about" class="col-form-label text-md-right">about</label>
 
-                            <div class="col-md-6">
+                            <textarea  id="content" name="about" >{{  $setting->about}}</textarea>
 
-                                <textarea name="about" id="about" cols="30" rows="10"> {{  $setting->about}}</textarea>
 
-                            </div>
                         </div>
                         <div class="form-group row">
                             <label for="jourheureOfappel" class="col-md-4 col-form-label text-md-right">jourheureOfappel</label>
