@@ -9,7 +9,7 @@
                             <span class="short-line"></span>
                             <span class="long-line"></span>
                         </div>
-                        <p class="heading-text">{{ $Settings->about }}.
+                        <p class="heading-text">{!! $Settings->about!!}.
                         </p>
                     </div>
                 </div>
