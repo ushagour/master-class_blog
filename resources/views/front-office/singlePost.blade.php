@@ -54,9 +54,9 @@
                         </div>
 
                         <div class="post__content-info">
-
-                                {!! $post->content !!}    
+                           {!! $post->content !!}    
                                  <!-- Todo -->
+                          
 
 
 

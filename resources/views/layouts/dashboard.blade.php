@@ -8,33 +8,33 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>  
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" ></script>  
+    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>   
+    
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" ></script>   -->
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- toastr -->
-
-  <script src="{{ asset('js/toastr.js') }}"></script>  
+    <script src="{{ asset('js/toastr.js') }}"></script>  
     <link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
-        
     
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
- 
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
+    
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
+    
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+    <script src="https://kit.fontawesome.com/8aec3381bb.js" crossorigin="anonymous"></script>
+            @yield('style')
 
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-<script src="https://kit.fontawesome.com/8aec3381bb.js" crossorigin="anonymous"></script>
-        @yield('style')
-
- 
 </head>
 <body>
     <div id="app">
@@ -176,11 +176,17 @@
 
 
     <script>
+            
 
+
+CKEDITOR.replace( 'content' );
 @if(Session::has('toaster-message'))
 toastr.{{ Session::get('toaster-class') }}("{{ Session::get('toaster-message') }}");
 
 @endif
+
+
+                     
 </script>
         @yield('scrypts')
 </body>

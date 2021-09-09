@@ -43,7 +43,6 @@ class SettingController extends Controller
             'address' => 'required|',
             'about' => 'required|',
             'jourheureOfappel' => 'required|',
-            'adresse2' => 'required|',
             'City' => 'required|',
             'country' => 'required|'
           

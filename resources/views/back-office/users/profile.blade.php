@@ -89,8 +89,8 @@
                             <label for="about" class="col-md-4 col-form-label text-md-right">About you</label>
 
                             <div class="col-md-6">
+                            <textarea  id="content" name="about" >{{  $user->profile->about}} </textarea>
 
-<textarea name="about" id="about" cols="40" rows="5" >{{  $user->profile->about}} </textarea>
                             </div>
                         </div>
 
