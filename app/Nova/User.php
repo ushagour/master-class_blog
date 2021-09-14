@@ -7,6 +7,8 @@ use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Panel;
+
 
 class User extends Resource
 {
@@ -49,12 +51,8 @@ class User extends Resource
             Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
-
-            Text::make('Email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+                new Panel('Address Information', $this->MoreInformation()),//new  panel of address information 
+           
 
             Password::make('Password')
                 ->onlyOnForms()
@@ -62,7 +60,24 @@ class User extends Resource
                 ->updateRules('nullable', 'string', 'min:8'),
         ];
     }
+  /**
+     *  creating new function return array of  more information  
+     *
+     * @return array
+     */
 
+    protected function MoreInformation (){
+
+        return[
+            Text::make('Email')
+            ->sortable()
+            ->rules('required', 'email', 'max:254')
+            ->creationRules('unique:users,email')
+            ->updateRules('unique:users,email,{{resourceId}}')
+
+        ];
+     
+    }
     /**
      * Get the cards available for the request.
      *
